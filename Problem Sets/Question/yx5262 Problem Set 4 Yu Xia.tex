@@ -1,0 +1,424 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\usepackage{a4wide}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{parskip}
+
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\DeclareMathOperator{\EX}{\mathbb{E}}
+
+\titleformat*{\subsection}{\normalfont}
+
+\author{Yu Xia \\ ID: yx5262}
+\title{Yu Xia's Problem Set 4}
+\date{September 2022}
+
+\begin{document}
+\maketitle
+
+\nocite{*}
+
+\section*{1}
+
+$r^{m}_{15}=\dfrac{r^{a}_{15}}{12}=0.003$
+
+We have:
+
+$$
+M_{15}=\dfrac{P\cdot r^{m}_{15}}{1-\dfrac{1}{\left(1+r^{m}_{15}\right)^{180}}}
+$$
+
+If $P=\$160$K, 
+
+$M_{15}=\boxed{1,151.69}$
+
+$TP_{0}=180M_{15}=\boxed{207,303}$
+
+If $P=\$150$K, 
+
+$M_{15}=\boxed{1,079.71}$
+
+$TP_{1}=180M_{15}=\boxed{194,346}$
+
+In 5.1, $\rho^{a}=0.02$ is given.
+
+$\rho^{m}=\dfrac{\rho^{a}}{12}=\dfrac{0.02}{12}=\dfrac{0.01}{6}=\dfrac{1}{600}\approx0.017$
+
+The present value of the total annual rent is
+
+$$
+C\left(c\right)=c\left(1+\dfrac{1}{1+\rho^{m}}+\dots+\dfrac{1}{\left(1+\rho^{m}\right)^{11}}\right)
+=c\dfrac{1+\rho^{m}}{\rho^{m}}\left(1-\dfrac{1}{\left(1+\rho^{m}\right)^{12}}\right)
+$$
+
+If $C=\$1,500$, $\boxed{C\left(1500\right)=17,836}$
+
+$TP_{0}-C\left(c\right)-\dfrac{TP_{1}}{1+\rho^{a}}=207,303-17,836-\dfrac{194,346}{1.02}\approx189,467-190,535.29\approx\boxed{-1,068.29}$
+
+If $C=\$2,000$, $\boxed{C\left(2000\right)=23,782}$
+
+$TP_{0}-C\left(c\right)-\dfrac{TP_{1}}{1+\rho^{a}}=207,303-23,782-\dfrac{194,346}{1.02}\approx183,521-190,535.29\approx\boxed{-7,014.29}$
+
+\begin{flalign*}
+    c^{*}&=\dfrac{\rho^{m}}{1+\rho^{m}}\dfrac{TP_{0}-\dfrac{TP_{1}}{1+\rho^{a}}}{1-\dfrac{1}{\left(1+\rho_{m}\right)^{12}}}&\\
+    &=\dfrac{\dfrac{1}{600}}{1+\dfrac{1}{600}}\dfrac{207,303-\dfrac{194,346}{1+0.02}}{1-\dfrac{1}{\left(1+\dfrac{1}{600}\right)^{12}}}&\\
+    &=\dfrac{\dfrac{1}{600}}{\dfrac{601}{600}}\dfrac{207,303-\dfrac{194,346}{1.02}}{1-\dfrac{1}{\left(\dfrac{601}{600}\right)^{12}}}&\\
+    &=\dfrac{600}{601}\dfrac{207,303-\dfrac{194,346}{1.02}}{1-\left(\dfrac{600}{601}\right)^{12}}&\\
+    &\approx\boxed{1410.1423}
+\end{flalign*}
+
+\section*{2}
+
+If $r^{a}_{u}=0.04$
+
+$r^{m}_{u}=\dfrac{r^{a}_{u}}{12}=\dfrac{0.04}{12}=\dfrac{0.01}{3}=\dfrac{1}{300}\approx0.00333$
+
+When $P=\$150$K,
+
+$M_{u}=\dfrac{P\cdot r^{m}_{u}}{1-\dfrac{1}{\left(1+r^{m}_{u}\right)^{180}}}=\dfrac{150,000\cdot \dfrac{1}{300}}{1-\dfrac{1}{\left(\dfrac{301}{300}\right)^{180}}}=\dfrac{1500\cdot \dfrac{1}{3}}{1-\left(\dfrac{300}{301}\right)^{180}}\approx\dfrac{500}{1-0.5493595}\approx\dfrac{500}{0.45}\approx\boxed{1,109.53}$
+
+$TP_{u}=180M_{u}\approx180\times1,109.53\approx199,715.7$
+
+$\mathbb{E}\left[TP\right]=\pi TP_{u}+\left(1-\pi\right)TP_{1}\approx0.5\times199,715.7+0.5\times194,346\approx\boxed{197,030.9} $
+
+\section*{3}
+
+If the prices go up by 10 percent, $P_{u}=170$K.
+
+$M_{u}=\dfrac{P_{u}\cdot r^{m}_{15}}{1-\dfrac{1}{\left(1+r^{m}_{15}\right)^{180}}}=\dfrac{170,000\cdot 0.003}{1-\dfrac{1}{\left(1+\dfrac{3}{1000}\right)^{180}}}=\dfrac{170\cdot 3}{1-\dfrac{1}{\left(\dfrac{1003}{1000}\right)^{180}}}=\dfrac{510}{1-\left(\dfrac{1000}{1003}\right)^{180}}\approx\boxed{1,223.6658}$
+
+$TP_{u}=180M_{u}\approx\boxed{220,259.84}$
+
+If the prices go down by 10 percent, $P_{d}=130$K.
+
+$M_{d}=\dfrac{P_{d}\cdot r^{m}_{15}}{1-\dfrac{1}{\left(1+r^{m}_{15}\right)^{180}}}=\dfrac{130,000\cdot 0.003}{1-\dfrac{1}{\left(1+\dfrac{3}{1000}\right)^{180}}}=\dfrac{130\cdot 3}{1-\dfrac{1}{\left(\dfrac{1003}{1000}\right)^{180}}}=\dfrac{390}{1-\left(\dfrac{1000}{1003}\right)^{180}}\approx\boxed{935.7442}$
+
+$TP_{d}=180M_{d}\approx\boxed{168,433.99}$
+
+$\mathbb{E} \left[TP\right]=0.45TP_{u}+0.55TP_{d}\approx0.45\times220,259.8+0.55\times168,434\approx\boxed{191755.62}$
+
+\section*{4}
+
+By \textbf{1}, we have the critical value $c^{*}\approx1410.1423$, comparing buying now and buying a year afterward.
+
+Assume you are in the end of year 1. You are considering whether to buy in the end of $t=1$ or the end of $t=2$.
+
+$P^{t=2}=\$200,000-60,000=\$140$K.
+
+On the other hand,
+
+$M^{t=2}_{15}=\dfrac{P^{t=2}\cdot r^{m}_{15}}{1-\dfrac{1}{\left(1+r^{m}_{15}\right)^{180}}}=\dfrac{140,000\cdot 0.003}{1-\dfrac{1}{\left(1+0.003\right)^{180}}}=\dfrac{140\cdot 3}{1-\dfrac{1}{\left(1.003\right)^{180}}}=\dfrac{420}{1-\dfrac{1}{\left(1.003\right)^{180}}}\approx1007.7248$
+
+$TP_{2}=180M^{t=2}_{15}\approx181,390.46$
+
+The critical value, comparing $t=1$ and $t=2$, is:
+
+$c^{*\prime}=\dfrac{\rho^{m}}{1+\rho^{m}}\dfrac{TP_{1}-\dfrac{TP_{2}}{1+\rho^{a}}}{1-\dfrac{1}{\left(1+\rho_{m}\right)^{12}}}=\dfrac{600}{601}\dfrac{194,346-\dfrac{181,390.5}{1.02}}{1-\left(\dfrac{600}{601}\right)^{12}}\approx\boxed{1388.6526}$
+
+If the rent at the end of $t=1$ is higher than $\$1388.6526$, buy at the end of $t=1$ (if you have already been in $t=1$). If the rent at the end of $t=1$ is less than $\$1388.6526$, wait another year and buy at the end of $t=2$ (if you have already been in $t=1$). 
+
+\newpage
+
+(i)
+
+If $TP_{0}-C\left(c_{0}\right)-0.9c_{0}\left(\dfrac{1}{\left(1+\rho^{m}\right)^{12}}+\dfrac{1}{\left(1+\rho^{m}\right)^{13}}+\dots+\dfrac{1}{\left(1+\rho^{m}\right)^{23}}\right)-\dfrac{TP_{2}}{\left(1+\rho^{a}\right)^{2}}<0$, 
+
+better to buy at $t=0$ than $t=2$ regardless of future change of rent.
+
+That is,
+
+\begin{multline*}
+    207,303-c_{0}\dfrac{1+\rho^{m}}{\rho^{m}}\left(1-\dfrac{1}{\left(1+\rho^{m}\right)^{12}}\right)\\
+    -0.9c_{0}\dfrac{1}{\left(1+\rho^{m}\right)^{12}}\left(1+\dfrac{1}{1+\rho^{m}}+\dots+\dfrac{1}{\left(1+\rho^{m}\right)^{11}}\right)-\dfrac{181,390.46}{\left(1+\rho^{a}\right)^{2}}<0
+\end{multline*}
+
+\begin{multline*}
+    \implies207,303-c_{0}\dfrac{1+\rho^{m}}{\rho^{m}}\left(1-\dfrac{1}{\left(1+\rho^{m}\right)^{12}}\right)\\
+    -\dfrac{0.9c_{0}}{\left(1+\rho^{m}\right)^{12}}\dfrac{1+\rho^{m}}{\rho^{m}}\left(1-\dfrac{1}{\left(1+\rho^{m}\right)^{12}}\right)-\dfrac{181,390.46}{\left(1+\rho^{a}\right)^{2}}<0
+\end{multline*}
+
+$\implies207,303-c_{0}\dfrac{1+\rho^{m}}{\rho^{m}}\left(1-\dfrac{1}{\left(1+\rho^{m}\right)^{12}}\right)\left(1+\dfrac{0.9}{\left(1+\rho^{m}\right)^{12}}\right)-\dfrac{181,390.46}{\left(1+\rho^{a}\right)^{2}}<0$
+
+$\implies207,303-c_{0}\dfrac{1+\dfrac{1}{600}}{\dfrac{1}{600}}\left(1-\dfrac{1}{\left(1+\dfrac{1}{600}\right)^{12}}\right)\left(1+\dfrac{0.9}{\left(1+\dfrac{1}{600}\right)^{12}}\right)-\dfrac{181,390.46}{\left(1+0.02\right)^{2}}<0$
+
+$\implies207,303-c_{0}\dfrac{\dfrac{601}{600}}{\dfrac{1}{600}}\left(1-\dfrac{1}{\left(\dfrac{601}{600}\right)^{12}}\right)\left(1+\dfrac{0.9}{\left(\dfrac{601}{600}\right)^{12}}\right)-\dfrac{181,390.46}{1.0404}<0$
+
+$\implies207,303-601c_{0}\left(1-\left(\dfrac{600}{601}\right)^{12}\right)\left(1+0.9\left(\dfrac{600}{601}\right)^{12}\right)-\dfrac{181,390.46}{1.0404}<0$
+
+$\implies207,303-\dfrac{181,390.46}{1.0404}<601c_{0}\left(1-\left(\dfrac{600}{601}\right)^{12}\right)\left(1+0.9\left(\dfrac{600}{601}\right)^{12}\right)$
+
+$\implies601c_{0}\left(1-\left(\dfrac{600}{601}\right)^{12}\right)\left(1+0.9\left(\dfrac{600}{601}\right)^{12}\right)>207,303-\dfrac{181,390.46}{1.0404}$
+
+$\implies c_{0}>\dfrac{207,303-\dfrac{181,390.46}{1.0404}}{601\left(1-\left(\dfrac{600}{601}\right)^{12}\right)\left(1+0.9\left(\dfrac{600}{601}\right)^{12}\right)}\approx\boxed{1472.52}>1410.1423$
+
+Buy at $t=0$ if $c_{0}>1472.52$ regardless of future change.
+
+If $TP_{0}-C\left(c_{0}\right)-1.1c_{0}\left(\dfrac{1}{\left(1+\rho^{m}\right)^{12}}+\dfrac{1}{\left(1+\rho^{m}\right)^{13}}+\dots+\dfrac{1}{\left(1+\rho^{m}\right)^{23}}\right)-\dfrac{TP_{2}}{\left(1+\rho^{a}\right)^{2}}>0$, 
+
+better to buy at $t=2$ than $t=0$ regardless of future change of rent.
+
+That is,
+
+$\implies c_{0}<\dfrac{207,303-\dfrac{181,390.46}{1.0404}}{601\left(1-\left(\dfrac{600}{601}\right)^{12}\right)\left(1+1.1\left(\dfrac{600}{601}\right)^{12}\right)}\approx\boxed{1333.62}<1410.1423$
+
+Buying at $t=0$ is the wrost.
+
+Now let's consider:
+
+$1.1\times 1333.62\approx1466.9779>1388.6526$
+
+$0.9\times 1333.62<1333.62<1388.6526$
+
+Still cannot tell $t=1$ and $t=2$.
+
+If $c_{1}=1.1c_{0}<1388.6526\iff c_{0}<\boxed{1262.4115}<1333.62<1410.1423$, $t=2$ is better than $t=1$, $t=1$ is better than $t=0$,even if future increase in rate. Thus buying at $t=2$ is the best regardless of future rent change.
+
+If $c_{1}=0.9c_{0}>1388.6526\iff c_{0}>\boxed{1542.9474}>1410.1423>1333.62$, buying at $t=2$ is wrose than buying at $t=1$ regardless of future change. But at the same time, $t=0$ becomes the best choice.
+
+If $t=1$ is the best time,
+
+$c_{0}<1410.1423$ and $c_{1}>1388.6526$.
+
+$\because c_{1}\geqslant0.9c_{0}$
+
+$\therefore0.9c_{0}>1388.6526$ regardless of rent change. Follows the conclusion above.
+
+It follows that:
+
+Buy at $t=0$ if $c_{0}>1472.52$ regardless of future change.
+
+Buy at $t=2$ if $c_{0}<1262.4115$ regardless of future change.
+
+But it's still hard to draw a conslusion if $1262.4115<c_{0}<1472.52$, unless you know exactly how rate will change.
+
+\newpage
+
+(ii)
+
+Your expectation of the rent the next year is 
+
+$\mathbb{E} \left[c_{1}\right]=0.5\cdot1.1c_{0}+0.5\cdot0.9c_{0}=c_{0}$
+
+If $c_{0}>1410.1423>1388.6526$, buy the house at $t=0$.
+
+If $c_{0}<1388.6526<1410.1423$, buy the house at $t=2$.
+
+If $1388.6526<c_{0}<1410.1423$,
+
+Buying at $t=1$ is better than buying at $t=0$, at the same time, $t=1$ is better than $t=2$.
+
+So buying at $t=1$ is the optimal choice if $1388.6526<c_{0}<1410.1423$.
+
+\underline{To sum up,}
+
+If $c_{0}>1410.1423$, buy the house at $t=0$.
+
+If $c_{0}=1410.1423$, indifferent between $t=0$ and $t=1$.
+
+If $1388.6526<c_{0}<1410.1423$, buying at $t=1$ is the optimal choice.
+
+If $c_{0}=1388.6526$, indifferent between $t=1$ and $t=2$.
+
+If $c_{0}<1388.6526$, buy the house at $t=2$.
+
+(iii)
+
+If $1262.4115<c_{0}<1472.52$:
+
+Case 1: If rent goes up at the end of $t=1$, $c_{1}=1.1c_{0}>1.1\times1262.4115\approx1388.6526$, buying a house at the end of $t=1$ is better than $t=2$.
+
+If $c_{0}<1410.1423$, buying at $t=1$ is the best choice.
+
+If $c_{0}>1410.1423$, buying at $t=0$ is the best choice.
+
+Case 2: If rent goes down at the end of $t=1$, $c_{1}=0.9c_{0}<0.9\times1472.52\approx1325.27<1388.6526$, buying a house at the end of $t=2$ is better than buying a house at the end of $t=1$.
+
+Since at $t=0$, you don't know the rent at $t=1$,
+
+if $TP_{0}-C\left(c_{0}\right)-\mathbb{E} \left[c_{1}\right]\left(\dfrac{1}{\left(1+\rho^{m}\right)^{12}}+\dfrac{1}{\left(1+\rho^{m}\right)^{13}}+\dots+\dfrac{1}{\left(1+\rho^{m}\right)^{23}}\right)-\dfrac{TP_{2}}{\left(1+\rho^{a}\right)^{2}}<0$, 
+
+buy at $t=0$ according to your expectation, $\mathbb{E} \left[c_{1}\right]=c_{0}$.
+
+That implies, 
+
+$c_{0}>\dfrac{207,303-\dfrac{181,390.46}{1.0404}}{601\left(1-\left(\dfrac{600}{601}\right)^{12}\right)\left(1+\left(\dfrac{600}{601}\right)^{12}\right)}\approx\boxed{1399.6309}$
+
+If $c_{0}>1399.6309$, buying at $t=0$ is better than $t=2$.
+
+If $c_{0}<1399.6309$, buying at $t=2$ is better than $t=0$.
+
+If $1410.1423<c_{0}<1472.52$:
+
+Buying at $t=0$ is better than buying at $t=1$, at the same time, $t=0$ is better than $t=2$.
+
+If $1399.6309<c_{0}<1410.1423$:
+
+Buying at $t=1$ is better than buying at $t=0$, at the same time, $t=0$ is better than $t=2$.
+
+At the same time, $c_{1}=0.9c_{0}<0.9\times1410.1423\approx1269.1281<1388.6526$. $t=2$ is actually better than $t=1$.
+
+The case is that, you know $t=1$ is better than buying at $t=0$ at the beginning. You wait to $t=1$. You find that rent goes down. $t=2$ becomes the best choice. But you cannot know the rent change in advance. At $t=0$, your expectation is that $t=1$ is the best.
+
+If $1262.4115<c_{0}<1399.6309$:
+
+Buying at $t=2$ is better than buying at $t=0$, at the same time, 
+
+$c_{1}=0.9c_{0}<0.9\times1399.6309\approx1259.6662<1388.6526$
+
+$t=2$ is better than $t=1$,if rent goes down.
+
+\underline{In conclusion,}
+
+If $c_{0}>1472.52$, buy at $t=0$.
+
+If $c_{0}<1262.4115$, buy at $t=2$.
+
+If $1262.4115\leqslant c_{0}\leqslant1472.52$:
+
+Case 1: rent increases.
+
+If $c_{0}=1262.4115$, indifferent with $t=1$ and $t=2$.
+
+If $1262.4115<c_{0}<1410.1423$, buy at $t=1$.
+
+If $c_{0}=1410.1423$, indifferent with $t=0$ and $t=1$.
+
+If $1410.1423<c_{0}\leqslant1472.52$, buy at $t=0$.
+
+Case 2: rent decreases,
+
+If $1410.1423<c_{0}\leqslant1472.52$, best choice is to buy at $t=0$.
+
+If $1262.4115\leqslant c_{0}<1410.1423$, best choice is to buy at $t=2$.
+
+(iv)
+
+Follows from (iii), but plug in $0.9c_{0}$ in case 2.
+
+It implies $c_{0}>\dfrac{207,303-\dfrac{181,390.46}{1.0404}}{601\left(1-\left(\dfrac{600}{601}\right)^{12}\right)\left(1+0.9\left(\dfrac{600}{601}\right)^{12}\right)}\approx1472.52$
+
+If $c_{0}>1472.52$, buying at $t=0$ is the best.
+
+If $c_{0}<1472.52$, buying at $t=2$ is better than $t=0$ if price goes down.
+
+Case 2 is under the condition $1262.4115<c_{0}<1472.52$, where buying a house at the end of $t=2$ is better than buying a house at the end of $t=1$ if rent goes down. 
+
+So in Case 2, rent goes down, buy at $t=2$ is optimal.
+
+\underline{To summarize:} 
+
+If $c_{0}>1472.52$, buy at $t=0$.
+
+If $c_{0}<1262.4115$, buy at $t=2$.
+
+If $1262.4115\leqslant c_{0}\leqslant1472.52$:
+
+Case 1, rent goes up, 
+
+If $c_{0}=1262.4115$, indifferent with $t=1$ and $t=2$
+
+if $1262.4115<c_{0}<1410.1423$, buy at $t=1$,
+
+if $c_{0}=1410.1423$, indifferent with $t=0$ and $t=1$,
+
+if $1410.1423<c_{0}\leqslant1472.52$, buy at $t=0$,
+
+Case 2, rent goes down, buy at $t=2$.
+
+(v)
+
+If $1262.4115<c_{0}<1472.52$:
+
+When $1410.1423<c_{0}<1472.52$, $t=0$ is better than $t=1$. You are comparing $t=0$ and $t=2$.
+
+Plug in $\mathbb{E} \left[c_{1}\right]$ like (iii), we have $1399.6309<1410.1423<c_{0}<1472.52$. $t=0$ is better than $t=2$.
+
+When $1262.4115<c_{0}<1410.1423$, $t=1$ is better than $t=0$. You wait for another year.
+
+If price goes up, $c_{1}=1.1c_{0}>1.1\times1262.4115\approx1388.6526$, you buy at $t=1$.
+
+If price goes down, $c_{1}=0.9c_{0}<0.9\times1410.1423\approx1269.1281<1388.6526$, you buy at $t=2$.
+
+\fbox{%
+  \parbox{\textwidth}{
+    In short,\\
+    \\
+    If $c_{0}>1410.1423$, buy at $t=0$.\\
+    \\
+    If $c_{0}<1262.4115$, buy at $t=2$.\\
+    \\
+    If $1262.4115\leqslant c_{0}\leqslant1410.1423$: \\
+    \\
+    Wait for one year.\\
+    \\
+    When rent goes up, buy at $t=1$.\\
+    \\
+    When rent goes down, buy at $t=2$.\\    
+  }%
+}
+
+(vi)
+
+If $1262.4115<c_{0}<1472.52$:
+
+When $1410.1423<c_{0}<1472.52$, $t=0$ is better than $t=1$. You are comparing $t=0$ and $t=2$.
+
+If rent goes up, $c_{0}>1333.62$, buy at $t=0$.
+
+If rent goes down, $c_{0}<1472.52$, buy at $t=2$.
+
+When $1262.4115<c_{0}<1410.1423$:
+
+Wait for one year.
+
+If rent goes up, $c_{1}=1.1c_{0}>1.1\times1262.4115\approx1388.6526$, you buy at $t=1$.
+
+If price goes down, $c_{1}=1.1c_{0}<0.9\times1410.1423\approx1269.1281<1388.6526$, you buy at $t=2$.
+
+\underline{Thus,}
+
+If $c_{0}>1472.52$, buy at $t=0$.
+
+If $c_{0}<1262.4115$, buy at $t=2$.
+
+If $1410.1423<c_{0}<1472.52$:
+
+If rent goes up, buy at $t=0$.
+
+If rent goes down, buy at $t=2$.
+
+If $1262.4115\leqslant c_{0}\leqslant1410.1423$:
+
+Wait for one year.
+
+When rent goes up, buy at $t=1$.
+
+When rent goes down, buy at $t=2$.
+\\
+\\
+I think (v) is closest to professor's meaning.
+
+\end{document}

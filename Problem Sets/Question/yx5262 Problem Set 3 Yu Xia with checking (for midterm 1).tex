@@ -1,0 +1,444 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\usepackage{a4wide}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{parskip}
+
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\DeclareMathOperator{\EX}{\mathbb{E}}
+
+\titleformat*{\subsection}{\normalfont}
+
+\author{Yu Xia \\ ID: yx5262}
+\title{Yu Xia's Answer for Problem Set 2}
+\date{September 15 2022}
+
+\begin{document}
+\maketitle
+
+\nocite{*}
+
+I use a electronic version for this time, because of so many repeated notations, and also because it is so likely to make mistake in calculation.
+
+\section*{1}
+
+\subsection*{(a)}
+
+$w_{0}=q\bar{a}=2\times5+1\times10=\boxed{20}$
+
+\subsection*{(b)}
+
+$R=\begin{pmatrix}
+    r_{11} & r_{12} \\
+    r_{21} & r_{22}
+\end{pmatrix}=\begin{pmatrix}
+    1 & 2 \\
+    3 & 1
+\end{pmatrix}$
+
+$r_{22}=1$ $r_{21}=3$
+
+$q_{2}=1$  $q_{1}=2$
+
+$\dfrac{r_{22}}{q_{2}}=1$ $\dfrac{r_{21}}{q_{1}}=\dfrac{3}{2}$ $\dfrac{r_{22}}{q_{2}}-\dfrac{r_{21}}{q_{1}}=-\dfrac{1}{2}$
+
+$r_{11}=1$ $r_{12}=2$ 
+
+$\dfrac{r_{11}}{q_{1}}=\dfrac{1}{2}$ $\dfrac{r_{12}}{q_{2}}=2$ $\dfrac{r_{11}}{q_{1}}-\dfrac{r_{12}}{q_{2}}=-\dfrac{3}{2}$
+
+$\therefore \dfrac{\dfrac{r_{22}}{q_{2}}-\dfrac{r_{21}}{q_{1}}}{\dfrac{r_{11}}{q_{1}}-\dfrac{r_{12}}{q_{2}}}>0 $
+
+\subsection*{(c)}
+
+$w_{1}=1\cdot a_{1}+2\cdot a_{2}=a_{1}+2a_{2}$ for space 1,
+
+$w_{2}=3\cdot a_{1}+1\cdot a_{2}=3a_{1}+a_{2}$ for space 2.
+
+$\therefore w=(w_{1}, w_{2})=\boxed{(a_{1}+2a_{2}, 3a_{1}+a_{2})}$
+
+\subsection*{(d)}
+
+It's possible. 
+
+det$R=$det$\begin{vmatrix}
+    1 & 2 \\
+    3 & 1
+\end{vmatrix}=1-2\times3\not=0$
+
+\subsection*{(e)}
+
+The investor's problem, as a portfolio problem, is:
+
+\fbox{%
+\parbox[c]{\textwidth}{\
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(a_{1},a_{2}\right)}
+      \dfrac{2}{5}u\left(w_{1}\left(a\right)\right)+\dfrac{3}{5}u\left(w_{2}\left(a\right)\right) \\
+     \text{subject to}\\
+    &   2a_{1}+a_{2}=20.
+    \end{aligned}\\
+    \Longrightarrow
+    \begin{aligned}
+    & \max_{\left(a_{1},a_{2}\right)}
+      \dfrac{2}{5}\sqrt{a_{1}+2a_{2}}+\dfrac{3}{5}\sqrt{3a_{1}+a_{2}} \\
+      \text{subject to}\\
+    &  2a_{1}+a_{2}=20.
+    \end{aligned}
+\end{equation*}%
+}}
+
+Alternaltively, by (c) we haven
+
+$a_{1}=-\dfrac{1}{5}w_{1}+\dfrac{2}{5}w_{2}$, $a_{2}=\dfrac{3}{5}w_{1}-\dfrac{1}{5}w_{2}$
+
+The constraint becomes: 
+
+$2\times\left(-\dfrac{1}{5}w_{1}+\dfrac{2}{5}w_{2}\right)+\left(\dfrac{3}{5}w_{1}-\dfrac{1}{5}w_{2}\right)=20$
+
+$\implies -\dfrac{2}{5}w_{1}+\dfrac{4}{5}w_{2}+\dfrac{3}{5}w_{1}-\dfrac{1}{5}w_{2}=20$
+
+$\implies \dfrac{w_{1}}{5}+\dfrac{3}{5}w_{2}=20$
+
+$\implies w_{1}+3w_{2}=100$
+
+The investor's problem, as a state contingent wealth problem, is:
+
+\fbox{%
+\parbox[c]{\textwidth}{\
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(w_{1},w_{2}\right)}
+      \dfrac{2}{5}\sqrt{w_{1}}+\dfrac{3}{5}\sqrt{w_{2}} \\
+     \text{subject to}\\
+    &   w_{1}+3w_{2}=100.
+    \end{aligned}
+\end{equation*}%
+}}
+
+\subsection*{(f)}
+
+Solve the state contingent wealth problem:
+
+$MU_{1}=\dfrac{2}{5}\cdot\dfrac{1}{2}w_{1}^{-\frac{1}{2}}=\dfrac{1}{5}\cdot\dfrac{1}{\sqrt{w_{1}}}$
+
+$MU_{2}=\dfrac{3}{5}\cdot\dfrac{1}{2}w_{2}^{-\frac{1}{2}}=\dfrac{3}{10}\cdot\dfrac{1}{\sqrt{w_{2}}}$
+
+$\dfrac{MU_{1}}{MU_{2}}=\dfrac{\dfrac{1}{5\sqrt{w_{1}}}}{\dfrac{3}{10\sqrt{w_{2}}}}=\dfrac{\dfrac{2}{\sqrt{w_{1}}}}{\dfrac{3}{\sqrt{w_{2}}}}=\dfrac{2\sqrt{w_{2}}}{3\sqrt{w_{1}}}$
+
+On the other hand, 
+
+$\dfrac{MU_{1}}{MU_{2}}=\dfrac{1}{3}\implies\dfrac{2\sqrt{w_{2}}}{3\sqrt{w_{1}}}=\dfrac{1}{3}\implies\dfrac{2\sqrt{w_{2}}}{\sqrt{w_{1}}}=1\implies2\sqrt{w_{2}}=\sqrt{w_{1}}\implies4w_{2}=w_{1}$
+
+$\because w_{1}+3w_{2}=100$
+
+$\therefore 7w_{2}=100$
+
+\begin{spacing}{1.8}
+\fbox{%
+\parbox[c]{.12\textwidth}{\
+$\begin{cases}
+    w_{1}=\dfrac{400}{7}\\
+    w_{2}=\dfrac{100}{7}
+\end{cases}$}%
+}
+\end{spacing}
+
+$a_{1}=-\dfrac{1}{5}w_{1}+\dfrac{2}{5}w_{2}=-\dfrac{1}{5}\cdot\dfrac{400}{7}+\dfrac{2}{5}\cdot\dfrac{100}{7}=-\dfrac{-400+200}{5\cdot7}=-\dfrac{200}{5\cdot7}=\boxed{-\dfrac{40}{7}}$
+
+$a_{2}=20-2a_{1}=20-\left(-\dfrac{80}{7}\right)=20+\dfrac{80}{7}=\dfrac{140+80}{7}=\boxed{\dfrac{220}{7}}$
+
+\subsection*{(g)}
+
+She doesn't hedge all risks completely. As we see, $w_{1}\not=w_{2}$
+
+\section*{2}
+
+\subsection*{(a)}
+
+$w_{0}=q\bar{a}=2\times10+1\times10=\boxed{30}$
+
+\subsection*{(b)}
+
+$w_{1}=5\cdot a_{1}+1\cdot a_{2}=5a_{1}+a_{2}$ for space 1,
+
+$w_{2}=(-1)\cdot a_{1}+1\cdot a_{2}=-a_{1}+a_{2}$ for space 2,
+
+$w_{3}=2\cdot a_{1}+1\cdot a_{2}=2a_{1}+a_{2}$ for space 3.
+
+$\therefore w=(w_{1}, w_{2}, w_{3})=\boxed{(5a_{1}+a_{2}, -a_{1}+a_{2}, 2a_{1}+a_{2})}$
+
+\newpage
+
+\subsection*{(c)}
+
+Possible. 
+
+Because $w_{3}=2a_{1}+a_{2}=30$, as the budget constraint tells us. 
+
+Now that there are 2 equations, 2 unknowns $(a_{1}, a_{2})$ left.
+
+det$R=$det$\begin{vmatrix}
+    5 & 1 \\
+    -1 & 1
+\end{vmatrix}=5-(-1)\not=0$
+
+\subsection*{(d)}
+
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(a_{1},a_{2}\right)}
+      \dfrac{2}{3}u\left(w_{1}\left(a\right)\right)+\dfrac{1}{6}u\left(w_{2}\left(a\right)\right)+\dfrac{1}{6}u\left(w_{3}\left(a\right)\right)\\
+     \text{subject to}\\
+    &   2a_{1}+a_{2}=30.
+    \end{aligned}
+\end{equation*}
+$\Longrightarrow$
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(a_{1},a_{2}\right)}
+    \dfrac{2}{3}\ln\left(5a_{1}+a_{2}\right)+\dfrac{1}{6}\ln\left(-a_{1}+a_{2}\right)+\dfrac{1}{6}\ln\left(2a_{1}+a_{2}\right)\\
+      \text{subject to}\\
+    &  2a_{1}+a_{2}=30.
+    \end{aligned}
+\end{equation*}
+
+$MU_{1}=\dfrac{2}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}\cdot5+\dfrac{1}{6}\cdot\dfrac{1}{-a_{1}+a_{2}}\cdot\left(-1\right)+\dfrac{1}{6}\cdot\dfrac{1}{2a_{1}+a_{2}}\cdot2=\dfrac{10}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{a_{1}-a_{2}}+\dfrac{1}{3}\cdot\dfrac{1}{2a_{1}+a_{2}}$
+
+$MU_{2}=\dfrac{2}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}\cdot1+\dfrac{1}{6}\cdot\dfrac{1}{-a_{1}+a_{2}}\cdot1+\dfrac{1}{6}\cdot\dfrac{1}{2a_{1}+a_{2}}\cdot1=\dfrac{2}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{-a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{2a_{1}+a_{2}}$
+
+$\dfrac{MU_{1}}{MU_{2}}=\dfrac{\dfrac{10}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{a_{1}-a_{2}}+\dfrac{1}{3}\cdot\dfrac{1}{2a_{1}+a_{2}}}{\dfrac{2}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{-a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{2a_{1}+a_{2}}}$
+
+On the other hand, 
+
+$\dfrac{MU_{1}}{MU_{2}}=2\implies\dfrac{\dfrac{10}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{a_{1}-a_{2}}+\dfrac{1}{3}\cdot\dfrac{1}{2a_{1}+a_{2}}}{\dfrac{2}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{-a_{1}+a_{2}}+\dfrac{1}{6}\cdot\dfrac{1}{2a_{1}+a_{2}}}=2\\ \implies\dfrac{10}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}-\dfrac{1}{6}\cdot\dfrac{1}{-a_{1}+a_{2}}+\dfrac{1}{3}\cdot\dfrac{1}{2a_{1}+a_{2}}=\dfrac{4}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\dfrac{1}{3}\cdot\dfrac{1}{-a_{1}+a_{2}}+\dfrac{1}{3}\cdot\dfrac{1}{2a_{1}+a_{2}}\\ \implies\dfrac{6}{3}\cdot\dfrac{1}{5a_{1}+a_{2}}+\left(-\dfrac{1}{6}-\dfrac{1}{3}\right)\cdot\dfrac{1}{-a_{1}+a_{2}}+0=0\implies2\cdot\dfrac{1}{5a_{1}+a_{2}}+\left(-\dfrac{1}{6}-\dfrac{2}{6}\right)\cdot\dfrac{1}{-a_{1}+a_{2}}=0\\ \implies2\cdot\dfrac{1}{5a_{1}+a_{2}}=\dfrac{3}{6}\cdot\dfrac{1}{-a_{1}+a_{2}}\implies2\cdot\dfrac{1}{5a_{1}+a_{2}}=\dfrac{1}{2}\cdot\dfrac{1}{-a_{1}+a_{2}}\implies4\cdot\dfrac{1}{5a_{1}+a_{2}}=\dfrac{1}{-a_{1}+a_{2}}\\ \implies\dfrac{4}{5a_{1}+a_{2}}=\dfrac{1}{-a_{1}+a_{2}}\implies4\left(-a_{1}+a_{2}\right)=5a_{1}+a_{2}\implies-4a_{1}+4a_{2}=5a_{1}+a_{2}\\ \implies4a_{2}=9a_{1}+a_{2}\implies3a_{2}=9a_{1}\\ \implies a_{2}=3a_{1}$
+
+$\because 2a_{1}+a_{2}=30$
+
+$\therefore 2a_{1}+3a_{1}=30\implies5a_{1}=30$
+
+\begin{spacing}{1}
+\fbox{%
+\parbox[c]{.1\textwidth}{\
+$\begin{cases}
+    a_{1}=6\\
+    a_{2}=18
+\end{cases}$}%
+}
+\end{spacing}
+
+\subsection*{(e)}
+
+$w_{1}=5a_{1}+a_{2}=5\times6+18=30+18=\boxed{48}$ for space 1,
+
+$w_{2}=-a_{1}+a_{2}=-6+18=\boxed{12}$ for space 2,
+
+$w_{3}=2a_{1}+a_{2}=\boxed{30}$ for space 3.
+
+She doesn't hedge all risks completely. As we see, $w_{1}$, $w_{2}$ and $w_{3}$ are not equal.
+
+\section*{3}
+
+$w_{0}=q\cdot\bar{a}=\displaystyle\sum_{k=1}^{K}q_{k}\cdot\bar{a}_{k}$
+
+The original portfolio problem is: 
+
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(a_{1}, a_{2}, ..., a_{K}\right)}
+    \sum_{s=1}^{S}p_{s}u\left(w_{s}\left(a\right)\right)\\
+      \text{subject to}\\
+    &  q\cdot\bar{a}=w_{0}.
+    \end{aligned}
+\end{equation*}
+
+\begin{flalign*}
+    w_{s}\left(a\right)& =\sum_{k=1}^{K}r_{sk}a_{k}\implies1=\dfrac{\displaystyle\sum_{k=1}^{K}r_{sk}a_{k}}{w_{s}} &&
+\end{flalign*}
+
+The question now becomes:
+
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(a_{1}, a_{2}, ..., a_{K}\right)}
+    \sum_{s=1}^{S}p_{s}u\left(\displaystyle\sum_{k=1}^{K}r_{sk}a_{k}\right)\\
+      \text{subject to}\\
+    &  \displaystyle\sum_{k=1}^{K}q_{k}\cdot\bar{a}_{k}=w_{0}.
+    \end{aligned}
+\end{equation*}
+
+Denote
+
+$\bar{\alpha}_{k}=\dfrac{q_{k}a_{k}}{w_{0}}$, $\displaystyle\sum_{k=1}^{K}\bar{\alpha}_{k}=\dfrac{\displaystyle\sum_{k=1}^{K}q_{k}a_{k}}{w_{0}}=\dfrac{w_{0}}{w_{0}}=1$
+
+$\alpha_{sk}=\dfrac{r_{sk}a_{k}}{w_{s}}$, note that $\dfrac{w_{s}\alpha_{sk}}{r_{sk}}=a_{k}=\dfrac{w_{0}\bar{\alpha}_{k}}{q_{k}}$
+
+$\displaystyle\sum_{k=1}^{K}\alpha_{sk}=\dfrac{\displaystyle\sum_{k=1}^{K}r_{sk}a_{k}}{w_{s}}=\dfrac{w_{s}}{w_{s}}=1$,
+
+where $k=1, 2, 3,...,K$, and $s=1, 2, 3, ... ,S$ above.
+
+Now the problem is:
+
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(\alpha_{1}, \alpha_{2}, ..., \alpha_{K}\right)}
+    \sum_{s=1}^{S}p_{s}u\left(w_{s}\displaystyle\sum_{k=1}^{K}\alpha_{sk}\right)\\
+      \text{subject to}\\
+    &  \displaystyle\sum_{k=1}^{K}\bar{\alpha}_{k}=1.
+    \end{aligned}
+\end{equation*}
+
+$w_{s}\alpha_{sk}q_{k}=w_{0}\bar{\alpha}_{k}r_{sk}\implies\alpha_{sk}=\dfrac{w_{0}\bar{\alpha}_{k}r_{sk}}{w_{s}q_{k}}$
+
+$w_{s}\displaystyle\sum_{k=1}^{K}\alpha_{sk}=w_{0}\cdot1=w_{0}=\displaystyle\sum_{k=1}^{K}r_{sk}a_{k}=\displaystyle\sum_{k=1}^{K}r_{sk}a_{k}=\displaystyle\sum_{k=1}^{K}r_{sk}\dfrac{w_{0}\bar{\alpha}_{k}}{q_{k}}=w_{0}\displaystyle\sum_{k=1}^{K}r_{sk}\dfrac{\bar{\alpha}_{k}}{q_{k}}$
+
+The problem becomes:
+
+\begin{equation*}
+    \begin{aligned}
+    & \max_{\left(\alpha_{1}, \alpha_{2}, ..., \alpha_{K}\right)}
+    \sum_{s=1}^{S}p_{s}u\left(w_{0}\displaystyle\sum_{k=1}^{K}\dfrac{r_{sk}\bar{\alpha}_{k}}{q_{k}}\right)\\
+      \text{subject to}\\
+    &  \displaystyle\sum_{k=1}^{K}\bar{\alpha}_{k}=1.
+    \end{aligned}
+\end{equation*}
+
+We konw the expression of $u\left(x\right)$, we know $p_{s}$, $r_{sk}$, $q_{k}$ and $w_{0}$ are given.
+
+So the problem is solvable, and it is equivalent to the former one.
+
+\section*{4}
+
+\subsection*{(a)}
+
+$R=\begin{pmatrix}
+    r_{11} & r_{12} \\
+    r_{21} & r_{22}
+\end{pmatrix}=\begin{pmatrix}
+    8 & 5 \\
+    4 & 1
+\end{pmatrix}$
+
+$q=\left(q_{1}, q_{2}\right)=\left(2, 1\right)$
+
+$\rho_{1}=\left(\rho_{11}, \rho_{21}\right)=\left(\dfrac{r_{11}}{q_{1}}, \dfrac{r_{21}}{q_{1}}\right)=\left(\dfrac{8}{2}, \dfrac{4}{2}\right)=\boxed{\left(4, 2\right)}$
+
+$\rho_{2}=\left(\rho_{12}, \rho_{22}\right)=\left(\dfrac{r_{12}}{q_{2}}, \dfrac{r_{22}}{q_{2}}\right)=\left(\dfrac{5}{1}, \dfrac{1}{1}\right)=\boxed{\left(5, 1\right)}$
+
+\subsection*{(b)}
+
+$\begin{pmatrix}
+    \rho_{11} & \rho_{12} \\
+    \rho_{21} & \rho_{22}
+\end{pmatrix}=\begin{pmatrix}
+    4 & 5 \\
+    2 & 1
+\end{pmatrix}$
+
+$\mu_{1}=\rho_{11}p_{1}+\rho_{21}p_{2}=4\times\dfrac{1}{3}+2\times\dfrac{2}{3}=\dfrac{4}{3}+\dfrac{4}{3}=\boxed{\dfrac{8}{3}}$
+
+$\mu_{2}=\rho_{12}p_{1}+\rho_{22}p_{2}=5\times\dfrac{1}{3}+1\times\dfrac{2}{3}=\dfrac{5}{3}+\dfrac{2}{3}=\boxed{\dfrac{7}{3}}$
+
+$\sigma_{11}=\left(\rho_{11}-\mu_{1}\right)^2p_{1}+\left(\rho_{21}-\mu_{1}\right)^2p_{2}\\=\left(4-\dfrac{8}{3}\right)^2\times\dfrac{1}{3}+\left(2-\dfrac{8}{3}\right)^2\times\dfrac{2}{3}=\left(\dfrac{12-8}{3}\right)^2\times\dfrac{1}{3}+\left(\dfrac{6-8}{3}\right)^2\times\dfrac{2}{3}=\left(\dfrac{4}{3}\right)^2\times\dfrac{1}{3}+\left(\dfrac{2}{3}\right)^2\times\dfrac{2}{3}\\=\dfrac{16}{9}\times\dfrac{1}{3}+\dfrac{4}{9}\times\dfrac{2}{3}=\dfrac{16+8}{27}=\dfrac{24}{27}=\dfrac{3\times8}{3\times9}\\=\dfrac{8}{9}$
+
+$\sigma_{12}=\left(\rho_{11}-\mu_{1}\right)\left(\rho_{12}-\mu_{2}\right)p_{1}+\left(\rho_{21}-\mu_{1}\right)\left(\rho_{22}-\mu_{2}\right)p_{2}\\
+=\left(4-\dfrac{8}{3}\right)\left(5-\dfrac{7}{3}\right)\times\dfrac{1}{3}+\left(2-\dfrac{8}{3}\right)\left(1-\dfrac{7}{3}\right)\times\dfrac{2}{3}\\
+=\left(\dfrac{12-8}{3}\right)\left(\dfrac{15-7}{3}\right)\times\dfrac{1}{3}+\left(\dfrac{6-8}{3}\right)\left(\dfrac{3-7}{3}\right)\times\dfrac{2}{3}\\
+=\left(\dfrac{4}{3}\right)\left(\dfrac{8}{3}\right)\times\dfrac{1}{3}+\left(-\dfrac{2}{3}\right)\left(-\dfrac{4}{3}\right)\times\dfrac{2}{3}=\dfrac{32}{9}\times\dfrac{1}{3}+\dfrac{8}{9}\times\dfrac{2}{3}=\dfrac{32+16}{27}=\dfrac{48}{27}=\dfrac{3\times16}{3\times9}\\=\dfrac{16}{9}$
+
+$\sigma_{22}=\left(\rho_{12}-\mu_{2}\right)^2p_{1}+\left(\rho_{22}-\mu_{2}\right)^2p_{2}\\=\left(5-\dfrac{7}{3}\right)^2\times\dfrac{1}{3}+\left(1-\dfrac{7}{3}\right)^2\times\dfrac{2}{3}=\left(\dfrac{15-7}{3}\right)^2\times\dfrac{1}{3}+\left(\dfrac{3-7}{3}\right)^2\times\dfrac{2}{3}=\left(\dfrac{8}{3}\right)^2\times\dfrac{1}{3}+\left(\dfrac{4}{3}\right)^2\times\dfrac{2}{3}\\=\dfrac{64}{9}\times\dfrac{1}{3}+\dfrac{16}{9}\times\dfrac{2}{3}=\dfrac{64+32}{27}=\dfrac{96}{27}=\dfrac{3\times32}{3\times9}\\=\dfrac{32}{9}$
+
+\begin{center}
+    \begin{spacing}{2}
+\fbox{%
+\parbox[c]{.25\textwidth}{\
+$$\sum=\begin{pmatrix}
+    \dfrac{8}{9} & \dfrac{16}{9} \\
+    \dfrac{16}{9} & \dfrac{32}{9}
+\end{pmatrix}$$}%
+}
+\end{spacing}
+\end{center}
+
+\subsection*{(c)}
+
+$\rho_{w}=\left(\rho_{1w}, \rho_{2w}\right)=\left(\alpha_{1}\rho_{11}+\alpha_{2}\rho_{12}, \alpha_{1}\rho_{21}+\alpha_{2}\rho_{22}\right)\\=\left(\alpha_{1}\times4+\left(1-\alpha_{1}\right)\times5, \alpha_{1}\times2+\left(1-\alpha_{1}\right)\times1\right)=\left(4\alpha_{1}+5-5\alpha_{1}, 2\alpha_{1}+1-\alpha_{1}\right)\\=\boxed{\left(-\alpha_{1}+5, \alpha_{1}+1\right)}$
+
+$\mu_{w}=\rho_{1w}p_{1}+\rho_{2w}p_{2}=\left(-\alpha_{1}+5\right)\times\dfrac{1}{3}+\left(\alpha_{1}+1\right)\dfrac{2}{3}=\dfrac{-\alpha_{1}+5}{3}+\dfrac{2\alpha_{1}+2}{3}=\boxed{\dfrac{\alpha_{1}+7}{3}}$
+
+$\sigma_{w}^{2}=\left(\rho_{1w}-\mu_{w}\right)^2p_{1}+\left(\rho_{2w}-\mu_{w}\right)^2p_{2}\\=\left(-\alpha_{1}+5-\dfrac{\alpha_{1}+7}{3}\right)^2\times\dfrac{1}{3}+\left(\alpha_{1}+1-\dfrac{\alpha_{1}+7}{3}\right)^2\times\dfrac{2}{3}\\=\left(\dfrac{-3\alpha_{1}+15}{3}-\dfrac{\alpha_{1}+7}{3}\right)^2\times\dfrac{1}{3}+\left(\dfrac{3\alpha_{1}+3}{3}-\dfrac{\alpha_{1}+7}{3}\right)^2\times\dfrac{2}{3}\\=\left(\dfrac{-3\alpha_{1}+15-\alpha_{1}-7}{3}\right)^2\times\dfrac{1}{3}+\left(\dfrac{3\alpha_{1}+3-\alpha_{1}-7}{3}\right)^2\times\dfrac{2}{3}\\=\left(\dfrac{-4\alpha_{1}+8}{3}\right)^2\times\dfrac{1}{3}+\left(\dfrac{2\alpha_{1}-4}{3}\right)^2\times\dfrac{2}{3}=\left(\dfrac{4}{3}\cdot\left(2-\alpha_{1}\right)\right)^2\times\dfrac{1}{3}+\left(\dfrac{2}{3}\cdot\left(\alpha_{1}-2\right)\right)^2\times\dfrac{2}{3}\\=\left(\alpha_{1}-2\right)^2\cdot\dfrac{16}{9}\cdot\dfrac{1}{3}+\left(\alpha_{1}-2\right)^2\cdot\dfrac{4}{9}\cdot\dfrac{2}{3}=\left(\dfrac{16}{27}+\dfrac{8}{27}\right)\left(\alpha_{1}-2\right)^2=\dfrac{24}{27}\left(\alpha_{1}-2\right)^2\\=\boxed{\dfrac{8}{9}\left(\alpha_{1}-2\right)^2}$
+
+Check:
+
+$\sigma\left(w,1\right)=\alpha_{1}\sigma_{11}+\alpha_{2}\sigma_{21}=\dfrac{8}{9}\alpha_{1}+\dfrac{16}{9}\left(1-\alpha_{1}\right)==\dfrac{8}{9}\alpha_{1}+\dfrac{16}{9}-\dfrac{16}{9}\alpha_{1}=-\dfrac{8}{9}\alpha_{1}+\dfrac{16}{9}$
+
+$\sigma\left(w,2\right)=\alpha_{1}\sigma_{12}+\alpha_{2}\sigma_{22}=\dfrac{16}{9}\alpha_{1}+\dfrac{32}{9}\left(1-\alpha_{1}\right)==\dfrac{16}{9}\alpha_{1}+\dfrac{32}{9}-\dfrac{32}{9}\alpha_{1}=-\dfrac{16}{9}\alpha_{1}+\dfrac{32}{9}$
+
+Or,
+
+$\sigma\left(w,1\right)=p_{1}\left(\rho_{11}-\mu_{1}\right)\left(\rho_{1w}-\mu_{w}\right)+p_{2}\left(\rho_{21}-\mu_{1}\right)\left(\rho_{2w}-\mu_{w}\right)=\dfrac{1}{3}\left(4-\dfrac{8}{3}\right)\left(\left(-\alpha_{1}+5\right)-\dfrac{\alpha_{1}+7}{3}\right)+\dfrac{2}{3}\left(2-\dfrac{8}{3}\right)\left(\left(\alpha_{1}+1\right)-\dfrac{\alpha_{1}+7}{3}\right)=\dfrac{1}{3}\cdot\left(\dfrac{12}{3}-\dfrac{8}{3}\right)\left(\dfrac{-3\alpha_{1}+15-\alpha_{1}-7}{3}\right)+\dfrac{2}{3}\cdot\left(\dfrac{6}{3}-\dfrac{8}{3}\right)\left(\dfrac{3\alpha_{1}+3-\alpha_{1}-7}{3}\right)=\dfrac{1}{3}\cdot\dfrac{4}{3}\cdot\dfrac{-4\alpha_{1}+8}{3}+\dfrac{2}{3}\cdot\dfrac{-2}{3}\cdot\dfrac{2\alpha_{1}-4}{3}=\dfrac{4}{27}\left[\left(-4\alpha_{1}+8\right)-\left(2\alpha_{1}-4\right)\right]=\dfrac{4}{27}\left(-4\alpha_{1}+8-2\alpha_{1}+4\right)=\dfrac{4}{27}\left(-6\alpha_{1}+12\right)=\dfrac{4}{27}\cdot6\left(-\alpha_{1}+2\right)=\dfrac{4}{3\cdot9}\cdot3\cdot2\left(-\alpha_{1}+2\right)=-\dfrac{8}{9}\alpha_{1}+\dfrac{16}{9}$
+
+$\sigma\left(w,2\right)=p_{1}\left(\rho_{12}-\mu_{2}\right)\left(\rho_{1w}-\mu_{w}\right)+p_{2}\left(\rho_{22}-\mu_{2}\right)\left(\rho_{2w}-\mu_{w}\right)=\dfrac{1}{3}\left(5-\dfrac{7}{3}\right)\left(\left(-\alpha_{1}+5\right)-\dfrac{\alpha_{1}+7}{3}\right)+\dfrac{2}{3}\left(1-\dfrac{7}{3}\right)\left(\left(\alpha_{1}+1\right)-\dfrac{\alpha_{1}+7}{3}\right)=\dfrac{1}{3}\cdot\left(\dfrac{15}{3}-\dfrac{7}{3}\right)\left(\dfrac{-3\alpha_{1}+15-\alpha_{1}-7}{3}\right)+\dfrac{2}{3}\cdot\left(\dfrac{3}{3}-\dfrac{7}{3}\right)\left(\dfrac{3\alpha_{1}+3-\alpha_{1}-7}{3}\right)=\dfrac{1}{3}\cdot\dfrac{4}{3}\cdot\dfrac{-4\alpha_{1}+8}{3}+\dfrac{2}{3}\cdot\dfrac{-2}{3}\cdot\dfrac{2\alpha_{1}-4}{3}=\dfrac{4}{27}\left[\left(-4\alpha_{1}+8\right)-\left(2\alpha_{1}-4\right)\right]=\dfrac{4}{27}\left(-4\alpha_{1}+8-2\alpha_{1}+4\right)=\dfrac{4}{27}\left(-6\alpha_{1}+12\right)=\dfrac{4}{27}\cdot6\left(-\alpha_{1}+2\right)=\dfrac{4}{3\cdot9}\cdot3\cdot2\left(-\alpha_{1}+2\right)=-\dfrac{8}{9}\alpha_{1}+\dfrac{16}{9}$
+
+\subsection*{(d)}
+
+Clearly, by the expression of $\sigma_{w}^{2}$ in part (c), $\alpha_{1}=2$ minimize the variance.
+
+It can also be proved in another way. Using the notation in the Lecture Note 2:
+
+$\bar{\mu}=\alpha_{1}\mu_{1}+\alpha_{2}\mu_{2}=\dfrac{8}{3}\alpha_{1}+\dfrac{7}{3}\left(1-\alpha_{1}\right)=\dfrac{8}{3}\alpha_{1}+\dfrac{7}{3}-\dfrac{7}{3}\alpha_{1}=\dfrac{1}{3}\alpha_{1}+\dfrac{7}{3}$
+
+$A=\sigma_{11}-2\sigma_{12}+\sigma_{22}=\dfrac{8}{9}-2\times\dfrac{16}{9}+\dfrac{32}{9}=\dfrac{8}{9}$
+
+$B=\left(\sigma_{11}-\sigma_{12}\right)\mu_{2}+\left(\sigma_{22}-\sigma_{12}\right)\mu_{1}=\left(\dfrac{8}{9}-\dfrac{16}{9}\right)\times\dfrac{7}{3}+\left(\dfrac{32}{9}-\dfrac{16}{9}\right)\times\dfrac{8}{3}=\left(-\dfrac{8}{9}\right)\times\dfrac{7}{3}+\dfrac{16}{9}\times\dfrac{8}{3}=\dfrac{-56+128}{27}=\dfrac{72}{27}=\dfrac{8\times9}{3\times9}=\dfrac{8}{3}$
+
+$\mu_{2}-\mu_{1}=\dfrac{7}{3}-\dfrac{8}{3}=-\dfrac{1}{3}$
+
+$\sigma_{11}\sigma_{22}-\sigma_{12}^{2}=\dfrac{8}{9}\times\dfrac{32}{9}-\left(\dfrac{16}{9}\right)^2=\dfrac{32\times8-16\times16}{9}=\dfrac{16\times2\times8-16\times16}{9}=0$
+
+To minimize
+
+$$\sigma_{w}^{2}=\dfrac{A}{\left(\mu_{2}-\mu_{1}\right)^2}\left(\bar{\mu}-\dfrac{B}{A}\right)^2+\dfrac{\sigma_{11}\sigma_{22}-\sigma_{12}^{2}}{A}$$
+
+$\bar{\mu}=\dfrac{B}{A}\iff\dfrac{1}{3}\alpha_{1}+\dfrac{7}{3}=\dfrac{\dfrac{8}{3}}{\dfrac{8}{9}}=3=\dfrac{9}{3}\iff\dfrac{\alpha_{1}}{3}=\dfrac{2}{3}\iff\boxed{\alpha_{1}=2}$
+
+$\boxed{\alpha_{2}=1-\alpha_{1}=-1}$
+
+The minimum of $\sigma_{w}^{2}$ is \boxed{0}, since $\bar{\mu}-\dfrac{B}{A}=0$ and $\sigma_{11}\sigma_{22}-\sigma_{12}^{2}=0$
+
+In other words, the investor hedge away all risks, and get a certain amount of wealth.
+
+$\mu_{w}=\dfrac{\alpha_{1}+7}{3}=\dfrac{2+7}{3}=\boxed{3}$
+
+The share of 1st asset is 
+$\dfrac{\alpha_{1}w_{0}}{q_{1}}=\dfrac{\alpha_{1}q\bar{a}}{q_{1}}=2\times\left(2\times10+1\times10\right)\div2=\boxed{30}$
+
+The share of 2nd asset is 
+$\dfrac{\alpha_{2}w_{0}}{q_{2}}=\dfrac{\alpha_{2}q\bar{a}}{q_{2}}=-1\times\left(2\times10+1\times10\right)\div1=\boxed{-30}$,
+that is, to short 30 shares of asset 2.
+
+
+\end{document}

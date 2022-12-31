@@ -1,0 +1,630 @@
+% Name: Yx5262 Problem Set 9 Yu Xia v0.tex
+% Author: Yu Xia 
+% Description: The version before submitted (to be cont.)
+% Last Updated: Nov 10, 2022
+\documentclass{article}
+
+\usepackage{titlesec}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\usepackage{a4wide}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{parskip}
+
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+
+\usepackage{mathtools}
+\allowdisplaybreaks
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\titleformat*{\subsection}{\normalfont}
+
+\author{Yu Xia \\ ID: yx5262}
+\title{Yu Xia's Answer for Problem Set 9}
+\date{Fall 2022}
+
+\begin{document}
+\maketitle
+
+\nocite{*}
+
+\section*{1}
+
+\subsection*{(a)}
+
+Denote the risk-neutral probability measure as $\left\{\pi, 1-\pi\right\}$.
+
+By the non-arbitrage pricing formula:
+
+$\quad 100=\dfrac{120\pi+80\left(1-\pi\right)}{1.04}$
+
+$\iff$
+
+$\quad 104=120\pi+80-80\pi$
+
+$\iff$
+
+$\quad 24=40\pi$
+
+$\iff$
+
+$\quad \pi=\dfrac{24}{40}=\dfrac{8\times3}{8\times5}=0.6$
+
+Check other cases:
+
+$\quad 120=\dfrac{144\pi+96\left(1-\pi\right)}{1.04} \iff \pi=0.6$
+
+$\quad 80=\dfrac{96\pi+64\left(1-\pi\right)}{1.04} \iff \pi=0.6$
+
+which is reasonable because the price change factor is $u=1.2$ when price goes up and $d=0.8$ when price goes down. It holds for all 3 periods.
+
+\subsection*{(b)}
+
+$\because K\in \left(80, 96\right),$
+
+$\therefore$ The option will be exercised only if price never goes up. 
+
+The value of exercise at $t=2$ is:
+
+$\quad\dfrac{\left(1-\pi\right)^{2}}{\left(1+r\right)^{2}}\left(K-64\right)=\dfrac{0.4^{2}}{1.04^{2}}\left(K-64\right)$
+
+The value of exercise at $t=1$ is:
+
+$\quad\dfrac{1-\pi}{1+r}\left(K-80\right)=\dfrac{0.4}{1.04}\left(K-80\right)$
+
+The value of exercise at $t=1$ is: $K-100$
+
+American put option will be exercised prematurely iff:
+
+$\quad\dfrac{0.4^{2}}{1.04^{2}}\left(K-64\right)<\min \left\{ K-100, \dfrac{0.4}{1.04}\left(K-80\right) \right\}$
+
+When $\dfrac{0.4^{2}}{1.04^{2}}\left(K-64\right)<K-100$
+
+$\iff$
+
+$\quad \dfrac{0.4^{2}}{1.04^{2}}K-\dfrac{0.4^{2}}{1.04^{2}}\times64<K-100$
+
+$\iff$
+
+$\quad 100-\dfrac{0.4^{2}}{1.04^{2}}\times64<K-\dfrac{0.4^{2}}{1.04^{2}}K$
+
+$\iff$
+
+$\quad \left(1-\dfrac{0.4^{2}}{1.04^{2}}\right)K>100-\dfrac{0.4^{2}}{1.04^{2}}\times64$
+
+$\iff$
+
+$\quad K>\dfrac{100-\dfrac{0.4^{2}}{1.04^{2}}\times64}{1-\dfrac{0.4^{2}}{1.04^{2}}}=106.25$
+
+When $\dfrac{0.4^{2}}{1.04^{2}}\left(K-64\right)<\dfrac{0.4}{1.04}\left(K-80\right)$
+
+$\iff$
+
+$\quad\dfrac{0.4}{1.04}\left(K-64\right)<K-80$
+
+$\iff$
+
+$\quad\dfrac{0.4}{1.04}K-\dfrac{0.4}{1.04}\times64<K-80$
+
+$\quad80-\dfrac{0.4}{1.04}\times64<K-\dfrac{0.4}{1.04}K$
+
+$\quad\dfrac{1}{1.04}K>80-\dfrac{0.4}{1.04}\times64$
+
+$\quad K>1.04\times80-0.4\times64=90$
+
+So American put option will be exercise prematurely iff $K\in\left(90,96\right)$
+
+\subsection*{(c)}
+
+We have:
+
+$P_{0}\left(K\right)=\begin{dcases}
+    \dfrac{0.4^{2}}{1.04^{2}}\left(K-64\right) & 80<K<90, \\
+    \dfrac{0.4}{1.04}\left(K-80\right) & 90\leqslant K<96.\\
+\end{dcases}$
+
+\section*{2}
+
+In high price level case $\omega_{1}$, the operational profit each year $T$ is:
+
+$\quad \Pi_{T}\left(\omega_{1}\right)=5\cdot50-150=100$
+
+In low price level case $\omega_{2}$:
+
+$\quad \Pi_{T}\left(\omega_{2}\right)=5\cdot30-150=0$
+
+Thus
+
+$\quad \displaystyle V\left(\omega_{i}\right)=\sum^{\infty}_{t=1}\beta^{t}\Pi_{t}\left(\omega_{i}\right)=\dfrac{\Pi_{T}\left(\omega_{i}\right)}{r}=10\Pi_{T}\left(\omega_{i}\right)$
+
+We have
+
+$\quad V\left(\omega_{1}\right)=10\Pi_{T}\left(\omega_{1}\right)=1000$
+
+$\quad V\left(\omega_{2}\right)=10\Pi_{T}\left(\omega_{2}\right)=0$
+
+The $PV$ of future profit is:
+
+$\quad V_{0}=0.6\cdot1000+0.4\cdot0=600$
+
+$\quad NPV_{0;0}=\max\left\{V_{0}-I, 0\right\}=\left(600-I\right)_{+}$
+
+Instead, assume that the manager waits one period. Then, if price goes up, the $PV$ of profit (without accounting for fixed investment cost $I$) is:
+
+$\quad \displaystyle \sum^{\infty}_{t=1}\beta^{t}\Pi_{t}\left(\omega_{1}\right)=1000$
+
+Therefore,
+
+$\quad NPV_{1;1}\left(\omega_{1}\right)=\left(1000-I\right)_{+}$
+
+Similarly,
+
+$\quad NPV_{1;1}\left(\omega_{2}\right)=\left(-I\right)_{+}$
+
+Hence,
+
+$\quad\displaystyle NPV_{0;1}=\mathbb{E} ^{\mathbb{Q} }\left[\beta NPV_{1;1}\right]=\beta\sum_{\omega\in\Omega}p\left(\omega\right)NPV_{1;\geqslant1}\left(\omega\right)=\dfrac{1}{1.1}\left(0.6\left(1000-I\right)_{+}+0.4\left(-I\right)_{+}\right)$
+
+$\quad V_{\text{opt}}=NPV_{0;1}-NPV_{0;0}=\dfrac{1}{1.1}\left(0.6\left(1000-I\right)_{+}+0.4\left(-I\right)_{+}\right)-\left(600-I\right)_{+}$
+
+\subsection*{(a)}
+
+Never invest if: $\left(600-I\right)_{+}=\left(1000-I\right)_{+}=\left(-I\right)_{+}=0$
+
+$\quad I>1000$
+
+If $I=1000$, it would be indifferent to whether or not to invest in the highest price case. 
+
+\subsection*{(b)}
+
+Invest at $t=1$ is optimal if: $\max\left\{\left(1000-I\right)_{+},\left(-I\right)_{+}\right\}>0$ and $V_{\text{opt}}>0$.
+
+That is:
+
+$\quad I<1000$ and $\dfrac{1}{1.1}\left(0.6\left(1000-I\right)_{+}+0.4\left(-I\right)_{+}\right)-\left(600-I\right)_{+}>0$
+
+$\iff$
+
+$\quad \left(600-I\right)_{+}<\dfrac{1}{1.1}\left(600-0.6I+0.4\left(-I\right)_{+}\right)$
+
+If $1000>I\geqslant600$, $\left(600-I\right)_{+}=0$, $\left(-I\right)_{+}=0$, $\left(1000-I\right)_{+}>0$ holds.
+
+The firm will invest at $t=1$ rather than $t=0$. It is reasonable because the firm will wait for a period, and invest when the price goes up. 
+
+If $0<I\leqslant600$, $\left(600-I\right)_{+}=600-I$, $\left(1000-I\right)_{+}=1000-I$, $\left(-I\right)_{+}=0$
+
+To satisfy $\left(600-I\right)_{+}<\dfrac{1}{1.1}\left(600-0.6I+0.4\left(-I\right)_{+}\right)$,
+
+$\quad 600-I<\dfrac{1}{1.1}\left(600-0.6I\right)$
+
+$\quad 1.1\left(600-I\right)<600-0.6I$
+
+$\quad 660-1.1I<600-0.6I$
+
+$\quad 600-0.6I>660-1.1I$
+
+$\quad 1.1I+600-0.6I>660$
+
+$\quad 1.1I-0.6I>60$
+
+$\quad 0.5I>60$
+
+$\quad I>120$
+
+If $I=120$, the investor will be indifferent with investing at $t=0$ and wait for the price to go up for a period to invest.
+
+In conclusion, if $120<I<1000$, invest at time $t=1$.
+
+\subsection*{(c)}
+
+Invest at $t=0$ if: $\left(600-I\right)_{+}>0$ and $V_{\text{opt}}<0$
+
+That is,
+
+$\quad I<600$, and $\quad \dfrac{1}{1.1}\left(0.6\left(1000-I\right)_{+}+0.4\left(-I\right)_{+}\right)-\left(600-I\right)_{+}<0$
+
+$\quad 600-I>\dfrac{1}{1.1}\left(0.6\left(1000-I\right)+0.4\left(-I\right)_{+}\right)$
+
+$\quad 1.1\left(600-I\right)>\left(600-0.6I\right)+0.4\left(-I\right)_{+}$
+
+$\quad 660-1.1I>600-0.6I+0.4\left(-I\right)_{+}$
+
+$\quad 60-0.5I>0.4\left(-I\right)_{+}$
+
+$\left(-I\right)_{+}=0$ if $I>0$, which is usually the case.
+
+If a negative $I$ is allowed, 
+
+$\quad 60-0.5I>-0.4I$
+
+$\quad 60-0.1I>0$
+
+$\quad 0.1I<60$
+
+$\quad I<600$
+
+So invest at time $t=0$ if $I<120$. (If a negative $I$ is not allowed, $0<I<120$.)
+
+\section*{3}
+
+Time 2 $PV$  of the future profit:
+
+If price goes up:
+
+$\quad\displaystyle \sum^{\infty}_{s=1}\beta^{s}\left(R_{2}\left(40\right)-C\right)=\dfrac{40\cdot5-150}{r}=\dfrac{200-150}{0.1}=500$
+
+$\quad V_{2}\left(40\right)=500$ if $50+\dfrac{Sc^{h}}{1.1}<500$
+
+If $50+\dfrac{Sc^{h}}{1.1}>500$:
+
+$\quad \dfrac{Sc^{h}}{1.1}>450$
+
+$\iff$
+
+$\quad Sc^{h}>450\cdot1.1=495$
+
+$\quad V_{2}\left(40\right)=50+\dfrac{Sc^{h}}{1.1}$ if $Sc^{h}>495$
+
+The firm would be indifferent if $Sc^{h}=495$.
+
+If price falls:
+
+$\quad \Pi_{2}\left(20\right)=20\cdot5-150=-50<0$
+
+$\quad V_{2}\left(20\right)=-50+\dfrac{Sc^{l}}{1.1}$
+
+Usually $Sc^{l}>0$. It is optimal to exit as well if: 
+
+$\quad -50+\dfrac{Sc^{l}}{1.1}>-500$
+
+$\quad \dfrac{Sc^{l}}{1.1}>-450$
+
+$\quad Sc^{l}>-450\cdot1.1=-495$
+
+Value of staying active at $t=1$:
+
+$\quad V_{1}\left(S_{1}\right)=V_{1}\left(30\right)=\dfrac{1}{1.1}\left(0.6V_{2}\left(40\right)+0.4V_{2}\left(20\right)\right)$
+
+Value of exit at $t=1$:
+
+$\quad NPV_{1}\left(S_{1}\right)=NPV_{1}\left(30\right)=\beta Sc=\dfrac{121}{1.1}=110$
+
+\subsection*{(a)}
+
+Equation holds when the firm is indifferent.
+
+If exit at $t=1$ is better than staying in $t=1$ in terms of expectation:
+
+$\quad V_{1}\left(S_{1}\right)<NPV_{1}\left(S_{1}\right)$
+
+$\iff$
+
+$\quad \dfrac{1}{1.1}\left(0.6V_{2}\left(40\right)+0.4V_{2}\left(20\right)\right)<\dfrac{Sc}{1.1}$
+
+$\iff$
+
+$\quad 0.6V_{2}\left(40\right)+0.4V_{2}\left(20\right)<Sc=121$
+
+If $Sc^{h}>495$ and $Sc^{l}>-495$:
+
+$\quad 0.6\left(50+\dfrac{Sc^{h}}{1.1}\right)+0.4\left(-50+\dfrac{Sc^{l}}{1.1}\right)<121$
+
+$\iff$
+
+$\quad 30+\dfrac{6}{11}Sc^{h}-20+\dfrac{4}{11}Sc^{l}<121$
+
+$\iff$
+
+$\quad 10+\dfrac{6}{11}Sc^{h}+\dfrac{4}{11}Sc^{l}<121$
+
+$\iff$
+
+$\quad \dfrac{6}{11}Sc^{h}+\dfrac{4}{11}Sc^{l}<111$
+
+If $Sc^{h}<495$ and $Sc^{l}>-495$:
+
+$\quad 0.6\cdot500+0.4\left(-50+\dfrac{Sc^{l}}{1.1}\right)<Sc=121$
+
+$\iff$
+
+$\quad 6\cdot50+\left(-0.4\cdot50+\dfrac{0.4}{1.1}Sc^{l}\right)<121$
+
+$\iff$
+
+$\quad 300+\left(-4\cdot5+\dfrac{4}{11}Sc^{l}\right)<121$
+
+$\iff$
+
+$\quad -20+\dfrac{4}{11}Sc^{l}<-179$
+
+$\iff$
+
+$\quad \dfrac{4}{11}Sc^{l}<-159$
+
+$\iff$
+
+$\quad Sc^{l}<-159\cdot\dfrac{11}{4}=-437.25$
+
+If $Sc^{h}>495$ and $Sc^{l}<-495$:
+
+$\quad 0.6\left(50+\dfrac{Sc^{h}}{1.1}\right)+0.4\left(-500\right)<Sc=121$
+
+$\quad 30+\dfrac{6}{11}Sc^{h}-0.4\cdot500<121$
+
+$\quad \dfrac{6}{11}Sc^{h}-4\cdot50<91$
+
+$\quad \dfrac{6}{11}Sc^{h}<291$
+
+$\quad Sc^{h}<291\cdot\dfrac{11}{6}=533.5$
+
+If $Sc^{h}<495$ and $Sc^{l}<-495$:
+
+$\quad 0.6V_{2}\left(40\right)+0.4V_{2}\left(20\right)=0.6\cdot500+0.4\cdot\left(-500\right)=0.2\cdot500=2\cdot50=100<121=Sc$
+
+In conclusion, 
+
+case 1:
+
+$\quad Sc^{h}>Sc^{l}$, $Sc^{h}>495$, $Sc^{l}>-495$ and $\dfrac{6}{11}Sc^{h}+\dfrac{4}{11}Sc^{l}<111$,
+
+case 2:
+
+$\quad Sc^{h}>Sc^{l}$, $Sc^{h}<495$, $-495<Sc^{l}<-437.25$,
+
+if a negative $Sc^{l}$ is alowed,
+
+case 3:
+
+$\quad Sc^{h}>Sc^{l}$, $495<Sc^{h}<533.5$ and $Sc^{l}<-495$,
+
+case 4:
+
+$\quad Sc^{h}>Sc^{l}$, $Sc^{h}<495$ and $Sc^{l}<-495$.
+
+\subsection*{(b)}
+
+If not exit in $t=1$:
+
+$\quad Sc^{h}>Sc^{l}$, $Sc^{h}>495$, $Sc^{l}>-495$ and $\dfrac{6}{11}Sc^{h}+\dfrac{4}{11}Sc^{l}>111$
+
+or 
+
+$\quad Sc^{h}>Sc^{l}$, $Sc^{h}<495$ and $Sc^{l}>-437.25$
+
+or if negative values are allowed,
+
+$\quad Sc^{h}>Sc^{l}$, $Sc^{h}>533.5$ and $Sc^{l}<-495$
+
+Quit if price goes down:
+
+$\quad Sc^{l}>-495$
+
+Quit if price goes up:
+
+$\quad Sc^{h}>495$
+
+Quit if no matter what happens:
+
+$\quad Sc^{h}>495$ and $Sc^{l}>-495$ as well.
+
+\section*{4}
+
+Assume the firm is active at $t=2$.
+
+Let $S_{2}=50$.
+
+The $PV$ of the profit is: 
+
+$\quad \dfrac{50\cdot5-150}{0.1}=\dfrac{250-150}{0.1}=\dfrac{100}{0.1}=1000>400=Sc$
+
+Not optimal to quit.
+
+$\quad V^{\text{ac}}_{2}\left(50\right)=1000$
+
+Let $S_{2}=40$.
+
+The $PV$ of the profit is: 
+
+$\quad \dfrac{40\cdot5-150}{0.1}=\dfrac{200-150}{0.1}=\dfrac{50}{0.1}=500>400=Sc$
+
+Not optimal to quit.
+
+$\quad V^{\text{ac}}_{2}\left(40\right)=500$
+
+Let $S_{2}=20$.
+
+The $PV$ of the profit at this period is: 
+
+$\quad 20\cdot5-150=100-150=-50=-50<0$
+
+The firm will exit if the price goes down to 20. 
+
+$\quad V^{\text{ac}}_{2}\left(20\right)=-50+\dfrac{400}{1.1}\approx313.64$
+
+Now look at the firm's decision at $t=1$:
+
+Let $S_{1}=50$.
+
+The $PV$ of the profit is:
+
+$\quad \dfrac{50\cdot5-150}{0.1}=\dfrac{250-150}{0.1}=\dfrac{100}{0.1}=1000>400=Sc$
+
+Let $S_{1}=30$, the $EPV$ of the profit is:
+
+$\quad \mathbb{E} ^{\mathbb{Q} }_{1}\left[\beta V^{\text{ac}}_{2}\right]=\mathbb{E} ^{\mathbb{Q} }\left[\beta V^{\text{ac}}_{2}|S_{1}=40\right]\approx0.6\cdot500+0.4\cdot\dfrac{313.64}{1.1}\approx414.05$
+
+If the firm, instead, decides to exit at $t=1$, when $S_{1}=50$, it will gain $\dfrac{Sc}{1.1}=\dfrac{400}{1.1}\approx363.64<414.05$.
+
+It's not optimal to exit at $t=1$ if $S_{1}=30$.
+
+To summarize:
+
+$\quad V^{\text{ac}}_{1}\left(50\right)=1000$
+
+$\quad V^{\text{ac}}_{1}\left(30\right)=414.05$
+
+At $t=0$, the $EPV$ of future gains, is:
+
+$V^{\text{ac}}_{0}=\mathbb{E} ^{\mathbb{Q} }\left[\beta V^{\text{ac}}_{1}\right]=0.6\cdot V^{\text{ac}}_{1}\left(50\right)+0.4\cdot V^{\text{ac}}_{1}\left(30\right)\approx0.6\cdot1000+0.4\cdot\dfrac{414.05}{1.1}\approx750.56$
+
+Backward induction:
+
+At $t=2$:
+
+$\quad G_{2}\left(50\right)=V^{\text{ac}}_{2}\left(50\right)-I=1000-500=500$
+
+$\quad G_{2}\left(40\right)=V^{\text{ac}}_{2}\left(40\right)-I=500-500=0$
+
+$\quad G_{2}\left(20\right)=\left(V^{\text{ac}}_{2}\left(20\right)-I, 0\right)_{+}=\left(313.64-500, 0\right)_{+}=0$
+
+Hence the firm invests at $t=2$ only if $S_{2}=50$ or $S_{2}=40$.
+
+At $t=1$:
+
+$\quad G_{1}\left(50\right)=V^{\text{ac}}_{1}\left(50\right)-I=1000-500=500>\dfrac{500}{1.1}=\dfrac{G_{2}}{1.1}$
+
+$\quad G_{1}\left(30\right)=\left(V^{\text{ac}}_{1}\left(30\right)-I, 0\right)_{+}=\left(414.05-500, 0\right)_{+}=0$
+
+Hence the firm invests at $t=1$ immediately only if $S_{1}=50$.
+
+At $t=0$:
+
+$\quad \beta\mathbb{E} ^{\mathbb{Q} }\left[G_{1}\right]=\dfrac{1}{1.1}\left(0.6G_{1}\left(50\right)+0.4G_{1}\left(30\right)\right)=\dfrac{1}{1.1}\left(0.6\cdot500+0\right)=\dfrac{6\cdot50}{1.1}=\dfrac{300}{1.1}\approx272.73$
+
+$\quad V^{\text{ac}}_{0}-I\approx750.56-500\approx250.56<272.73$
+
+In conclusion:
+
+\subsection*{(a)}
+
+Don't invest immediately at $t=0$.
+
+If $S_{1}=30$, wait until $t=2$. 
+
+Do not invest at $t=2$ if $S_{2}=20$ after waiting in the previous period.
+
+\subsection*{(b)}
+
+If $S_{1}=50$, the firm invests at $t=1$ immediately.
+
+If $S_{1}=30$, wait until $t=2$. If $S_{2}=40$, invest immediately. 
+
+\section*{5}
+
+Assume the firm is active at $t=2$.
+
+Let $S_{2}=60$.
+
+The $PV$ of the profit is: 
+
+$\quad \dfrac{60\cdot5-150}{0.1}=\dfrac{300-150}{0.1}=\dfrac{150}{0.1}=1500>200=Sc$
+
+Not optimal to quit.
+
+$\quad V^{\text{ac}}_{2}\left(60\right)=1500$
+
+Let $S_{2}=40$.
+
+The $PV$ of the profit is: 
+
+$\quad \dfrac{40\cdot5-150}{0.1}=\dfrac{200-150}{0.1}=\dfrac{50}{0.1}=500>200=Sc$
+
+Not optimal to quit.
+
+$\quad V^{\text{ac}}_{2}\left(40\right)=500$
+
+Let $S_{2}=20$.
+
+The $PV$ of the profit at this period is: 
+
+$\quad 20\cdot5-150=100-150=-50=-50<0$
+
+The firm will exit if the price goes down to 20. 
+
+$\quad V^{\text{ac}}_{2}\left(20\right)=-50+\dfrac{200}{1.1}\approx131.82$
+
+Now look at the firm's decision at $t=1$:
+
+Let $S_{1}=50$, the $EPV$ of the profit is:
+
+$\quad \mathbb{E} ^{\mathbb{Q} }\left[\beta V^{\text{ac}}_{2}|S_{1}=50\right]\approx0.6\cdot1500+0.4\cdot500=6\cdot150+4\cdot50=3\cdot300+200=1100$
+
+Let $S_{1}=30$, the $EPV$ of the profit is:
+
+$\quad \mathbb{E} ^{\mathbb{Q} }\left[\beta V^{\text{ac}}_{2}|S_{1}=30\right]\approx0.6\cdot500+0.4\cdot\dfrac{131.82}{1.1}\approx347.93$
+
+If the firm, instead, decides to exit at $t=1$, it will gain $\dfrac{Sc}{1.1}=\dfrac{200}{1.1}\approx181.82<347.93<1100$.
+
+The firm will not exit at $t=1$ before observing the price at $t=2$.
+
+To summarize:
+
+$\quad V^{\text{ac}}_{1}\left(50\right)=1100$
+
+$\quad V^{\text{ac}}_{1}\left(30\right)=347.93$
+
+At $t=0$, the $EPV$ of future gains, is:
+
+$V^{\text{ac}}_{0}=\mathbb{E} ^{\mathbb{Q} }\left[\beta V^{\text{ac}}_{1}\right]=0.6\cdot V^{\text{ac}}_{1}\left(50\right)+0.4\cdot V^{\text{ac}}_{1}\left(30\right)\approx0.6\cdot1100+0.4\cdot\dfrac{347.93}{1.1}\approx786.52$
+
+Backward induction:
+
+At $t=2$:
+
+$\quad G_{2}\left(60\right)=V^{\text{ac}}_{2}\left(60\right)-I=1500-400=1100$
+
+$\quad G_{2}\left(40\right)=V^{\text{ac}}_{2}\left(40\right)-I=500-400=100$
+
+$\quad G_{2}\left(20\right)=\left(V^{\text{ac}}_{2}\left(20\right)-I, 0\right)_{+}=\left(131.82-400, 0\right)_{+}=0$
+
+Hence the firm invests at $t=2$ only if $S_{2}=60$ or $S_{2}=40$.
+
+At $t=1$:
+
+$\quad G_{1}\left(50\right)=V^{\text{ac}}_{1}\left(50\right)-I=1100-400=700$
+
+$\quad G_{1}\left(30\right)=\left(V^{\text{ac}}_{1}\left(30\right)-I, 0\right)_{+}=\left(347.93-400, 0\right)_{+}=0$
+
+Hence the firm invests at $t=1$ immediately only if $S_{1}=50$.
+
+At $t=0$:
+
+$\quad \beta\mathbb{E} ^{\mathbb{Q} }\left[G_{1}\right]=\dfrac{1}{1.1}\left(0.6G_{1}\left(50\right)+0.4G_{1}\left(30\right)\right)=\dfrac{1}{1.1}\left(0.6\cdot700+0\right)=\dfrac{420}{1.1}\approx381.82$
+
+$\quad V^{\text{ac}}_{0}-I\approx786.52-400\approx386.52>381.82$
+
+In conclusion:
+
+\subsection*{(a)}
+
+If $S_{1}=30$, wait until $t=2$. 
+
+Do not invest at $t=2$ if $S_{2}=20$ after waiting in the previous period.
+
+\subsection*{(b)}
+
+Invest at $t=0$.
+
+If $S_{1}=50$, the firm invests at $t=1$ immediately.
+
+If $S_{1}=40$, wait until $t=2$. If $S_{2}=40$, invest immediately. 
+
+\end{document}

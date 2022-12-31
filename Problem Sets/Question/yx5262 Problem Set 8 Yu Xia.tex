@@ -1,0 +1,315 @@
+% Name: Yx5262 Problem Set 8 Yu Xia
+% Author: Yu Xia 
+% Description: The version before submitted (to be cont.)
+% Last Updated: Nov 10, 2022
+\documentclass{article}
+
+\usepackage{titlesec}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\usepackage{a4wide}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{parskip}
+
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+
+\allowdisplaybreaks
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\titleformat*{\subsection}{\normalfont}
+
+\author{Yu Xia \\ ID: yx5262}
+\title{Yu Xia's Answer for Problem Set 8}
+\date{Fall 2022}
+
+\begin{document}
+\maketitle
+
+\nocite{*}
+
+\section*{1}
+
+Suppose Microsoft is testing its brand new ``Windows 12" operating system. The Microsoft corporation gives the same task to many groups at the same time. Microsoft decides whether or not to update new functions by evaluating how groups perform. If it is not very hard for the groups to complete, then Microsoft will decide to release Windows 12 with new functions. Then Microsoft releases the initial ``insider beta" version at first, which could be regarded as a small scale experiment. Then, in early summer 2023 or so, Microsoft gives some nerd users the option to update their operating system to Win12 or not. It is considered to be a large-stage trial. 
+
+Now assume that the probability of no evidence to design new programs successfully is $1-\pi_{0}$, and the probability of designing new programs successfully, respectively, is $\pi_{0}$. Designing the new OS for each group (which works for the same task) could be regarded as a Bernoulli trial, and Microsoft decides by checking evidence about how groups perform in general.
+
+If the operating system runs well in the first stage, investors get the news, so the stock price of Microsoft goes up, Microsoft gets the payoff $R>0$. And then, the corporation releases this version to more users. 
+
+In the large scale testing, there are 2 possible events: severe ``bug" (i.e., the software produces an error result) happens, or a report showing that everything is perfect. Microsoft assigns probability $p_{0}\in\left(0,1\right)$ to the former case, and $1-p_{0}$ for the latter case. The programmers in Microsoft check the software by ``debugging'' technique each time. This could be viewed as the Bernoulli trial. It takes time for Microsoft to judge if there is no bug anywhere until there is a signal which reports that everything runs well. It takes money as well. If a severe problem happens, Microsoft has to fix it, and some investors lose confidence, so that Microsoft's profit will go down. Microsoft will get the payoff $R^{-}$ at random time which is defined by geometric distribution with parameter $p^{-}\in\left(0,1\right)$. Respectively, if everything goes well, profit will increase, thus Microsoft will get the payoff $R^{+}$, with geometric distribution parameter $p^{+}\in\left(0,1\right)$. $p^{-}\neq p^{+}$.
+
+The cost in the small scale test is $C_{0}$, and the cost for the large scale test is $C_{1}$. We have $C_{1}>C_{0}>0$.
+
+The other choice for Microsoft is to upgrade Windows 11 with only a few fixes. The payoff is $S$. We have $R^{-}<S<R^{+}$.
+
+Let the CDF of the time $R^{-}$ arrives be $F^{-}\left(t\right)$. Respectively, $F^{+}\left(t\right)$ for the $R^{+}$ case. 
+
+We assume $F^{+}$ FOSD $F^{-}$. Intuitively, finding out bugs is more likely to happen. 
+
+Equivalently,
+
+$\quad F^{+}\leqslant F^{-}$
+
+$\iff$
+
+$\quad 1-\left(1-p^{+}\right)^{t}\leqslant1-\left(1-p^{-}\right)^{t}$
+
+$\iff$
+
+$\quad \left(1-p^{+}\right)^{t}\geqslant\left(1-p^{-}\right)^{t}$
+
+$\iff$
+
+$\quad 1-p^{+}\geqslant1-p^{-}$
+
+$\iff$
+
+$\quad p^{+}\leqslant p^{-}$
+
+$\because p^{-}\neq p^{+}$
+
+$\therefore p^{+}<p^{-}$
+
+Backward induction:
+
+Let $p_{t}$ denote the posterior probability of the event that Win12 could be released if neither positive signal is reported, nor severe bug is found. 
+
+$ \quad p_{t}=\dfrac{p_{t-1}\left(1-p^{+}\right)}{\left(1-p_{t-1}\right)\left(1-p^{-}\right)+p_{t-1}\left(1-p^{+}\right)}$
+
+To prove $p_{t}>p_{t-1}, \forall t\geqslant1$:
+
+$\quad \dfrac{p_{t}}{p_{t-1}}>1$
+
+$\iff$
+
+$ \quad \dfrac{1-p^{+}}{\left(1-p_{t-1}\right)\left(1-p^{-}\right)+p_{t-1}\left(1-p^{+}\right)}>1$
+
+$\iff$
+
+$\quad 1-p^{+}>\left(1-p_{t-1}\right)\left(1-p^{-}\right)+p_{t-1}\left(1-p^{+}\right)$
+
+$\iff$
+
+$\quad \left(1-p_{t-1}\right)\left(1-p^{+}\right)>\left(1-p_{t-1}\right)\left(1-p^{-}\right)$
+
+$\iff$
+
+$\quad 1-p^{+}>1-p^{-}$
+
+$\iff$
+
+$\quad p^{+}<p^{-}$, which is reasonable.
+
+Hence, the more time no signal, the more likely Microsoft is hinted that they are on the right path.
+
+Express $p_{t}$ by $p_{0}$ by substituting equations recursively, we have:
+
+$\quad p_{t}=\dfrac{p_{0}\left(1-p^{+}\right)^{t}}{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t}+p_{0}\left(1-p^{+}\right)^{t}}$
+\begin{flalign*}
+    \quad\lim_{t\to\infty}p_{t}&=\lim_{t\to\infty}\dfrac{p_{0}\left(1-p^{+}\right)^{t}}{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t}+p_{0}\left(1-p^{+}\right)^{t}}&\\
+    &=\lim_{t\to\infty}\dfrac{p_{0}}{\left(1-p_{0}\right)\left(\dfrac{1-p^{-}}{1-p^{+}}\right)^{t}+p_{0}}&\\
+    &=\lim_{t\to\infty}\dfrac{p_{0}}{\left(1-p_{0}\right)\cdot0+p_{0}}&\\
+    &=1
+\end{flalign*}
+
+where $\dfrac{1-p^{-}}{1-p^{+}}<1$.
+
+We also have:
+\begin{flalign*}
+    \quad\sum^{T}_{t=1}\left(1-p^{+}\right)^{t-1}&=\sum^{T-1}_{t=0}\left(1-p^{+}\right)^{t}&\\
+    &=\sum^{\infty}_{t=0}\left(1-p^{+}\right)^{t}-\sum^{\infty}_{t=T}\left(1-p^{+}\right)^{t}&\\
+    &=\dfrac{1}{1-\left(1-p^{+}\right)}-\left(1-p^{+}\right)^{T}\sum^{\infty}_{t=0}\left(1-p^{+}\right)^{t}&\\
+    &=\dfrac{1-\left(1-p^{+}\right)^{T}}{p^{+}}
+\end{flalign*}
+
+$\iff$
+
+$\displaystyle\quad p^{+}\sum^{T}_{t=1}\left(1-p^{+}\right)^{t-1}=1-\left(1-p^{+}\right)^{T}$
+
+$\displaystyle\quad \left(1-p^{+}\right)^{T}=1-p^{+}\sum^{T}_{t=1}\left(1-p^{+}\right)^{t-1}$
+
+Similarly,
+
+$\displaystyle\quad \left(1-p^{-}\right)^{T}=1-p^{-}\sum^{T}_{t=1}\left(1-p^{-}\right)^{t-1}$
+
+$\therefore \displaystyle \left(1-p^{0}\right)\left(1-p^{-}\right)^{T}+p_{0}\left(1-p^{+}\right)^{T}$
+
+$\displaystyle\qquad =\left(1-p_{0}\right)\left(1-p^{-}\sum^{T}_{t=1}\left(1-p^{-}\right)^{t-1}\right)+p_{0}\left(1-p^{+}\sum^{T}_{t=1}\left(1-p^{+}\right)^{t-1}\right)$
+
+$\displaystyle\qquad=1-p_{0}-\left(1-p_{0}\right)p^{-}\sum^{T}_{t=1}\left(1-p^{-}\right)^{t-1}+p_{0}-p_{0}p^{+}\sum^{T}_{t=1}\left(1-p^{+}\right)^{t-1}$
+
+$\displaystyle\qquad =1-p^{+}\sum^{T}_{t=1}p_{0}\left(1-p^{+}\right)^{t-1}-p^{+}\sum^{T}_{t=1}\left(1-p_{0}\right)\left(1-p^{+}\right)^{t-1}$
+
+$\displaystyle\qquad=1-p^{+}\sum^{T}_{t=1}\dfrac{p_{0}\left(1-p^{+}\right)^{t-1}}{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}}\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{-}\right)^{t-1}\right)$
+
+$\displaystyle\qquad\qquad-p^{-}\sum^{T}_{t=1}\dfrac{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}}{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}}\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)$
+
+$\displaystyle\qquad=1-p^{+}\sum^{T}_{t=1}p_{t-1}\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)$
+
+$\displaystyle\qquad\qquad-p^{-}\sum^{T}_{t=1}\left(1-p_{t-1}\right)\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)$
+
+\begin{flalign*}
+    \qquad&=1-\left(\sum^{T}_{t=1}p_{t-1}p^{+}\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right) \right.&\\
+    &\left.\qquad+\sum^{T}_{t=1}\left(1-p_{t-1}\right)p^{-}\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\right)&
+\end{flalign*}
+
+$\displaystyle\qquad=1-\sum^{T}_{t=1}\left[p_{t-1}p^{+}+\left(1-p_{t-1}\right)p^{-}\right]\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)$
+
+Microsoft's value function in the large scale is:
+\begin{flalign*}
+    \quad V\left(T\right)&=\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left[\left(p_{t-1}p^{+}R^{+}+\left(1-p_{t-1}\right)p^{-}R^{-}\right)-C_{1}\right]& \\
+    &\qquad\qquad+\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{T}+p_{0}\left(1-p^{+}\right)^{T}\right)S &\\
+    &=\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left[\left(p_{t-1}p^{+}R^{+}+\left(1-p_{t-1}\right)p^{-}R^{}\right)-C_{1}\right]& \\
+    &\qquad\qquad+\left(1-\sum^{T}_{t=1}\left[p_{t-1}p^{+}+\left(1-p_{t-1}\right)p^{-}\right]\cdot\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\right)S &\\
+    &=\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{+}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left[\left(p_{t-1}p^{+}R^{+}+\left(1-p_{t-1}\right)p^{-}R^{-}\right)-C_{1}\right]& \\
+    &\qquad\qquad+S-\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left[p_{t-1}p^{+}+\left(1-p_{t-1}\right)p^{-}\right]S& \\
+    &=S+\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left[\left(p_{t-1}p^{+}R^{+}+\left(1-p_{t-1}\right)p^{-}R^{-}\right)-C_{1}\right]& \\
+    &\qquad\qquad-\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left[p_{t-1}p^{+}S+\left(1-p_{t-1}\right)p^{-}S\right]& \\
+    &=S+\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left(\left(p_{t-1}p^{+}R^{+}+\left(1-p_{t-1}\right)p^{+}R^{-}\right)-C_{1}\right.& \\
+    &\left. \qquad\qquad\qquad-\left(p_{t-1}p^{+}S+\left(1-p_{t-1}\right)p^{-}S\right)\right) &\\
+    &=S+\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\left(p_{t-1}p^{+}R^{+}+\left(1-p_{t-1}\right)p^{-}R^{-}\right. &\\
+    &\left. \qquad\qquad\qquad-p_{t-1}p^{+}S-\left(1-p_{t-1}\right)p^{-}S-C_{1}\right) &\\
+    &=S+\sum^{T}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)&\\
+    &\qquad\qquad\times\left(p_{t-1}p^{+}\left(R^{+}-S\right)+\left(1-p_{t-1}\right)p^{-}\left(R^{-}-S\right)-C_{1}\right)
+\end{flalign*}
+
+$\because R^{-}<S<R^{+}$
+
+$\therefore p_{t-1}p^{+}\left(R^{+}-S\right)+\left(1-p_{t-1}\right)p^{-}\left(R^{-}-S\right)$ is increasing with $p_{t-1}$.
+
+Given that
+
+$p_{0}p^{+}\left(R^{+}-S\right)+\left(1-p_{0}\right)p^{-}\left(R^{-}-S\right)>0$,
+
+Therefore it's optimal to continue this project with any belief $p_{t-1}>p_{0}$, until signal arrives (good reports or severe bugs found).
+
+The expected value of large scale testing is:
+\begin{flalign*}
+    \quad V\left(\infty\right)&=S+\sum^{\infty}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)&\\
+    &\qquad\qquad\times\left(p_{t-1}p^{+}\left(R^{+}-S\right)+\left(1-p_{t-1}\right)p^{-}\left(R^{-}-S\right)-C_{1}\right) &\\
+    &=S+\sum^{\infty}_{t=1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)&\\
+    &\qquad\qquad\times\left(\dfrac{p_{0}\left(1-p^{+}\right)^{t-1}}{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t}}\cdot p^{+}\left(R^{+}-S\right)\right. &\\
+    &\left. \qquad\qquad\qquad+\dfrac{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}}{\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}}\cdot p^{-}\left(R^{-}-S\right)-C_{1}\right) &\\
+    &=S+\sum^{\infty}_{t=1}\left(\left(p_{0}\left(1-p^{+}\right)^{t-1}p^{+}\left(R^{+}-S\right)+\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}p^{-}\left(R^{-}-S\right)\right)\right. &\\
+    &\left.\qquad\qquad\qquad-C_{1}\left(\left(1-p_{0}\right)\left(1-p^{-}\right)^{t-1}+p_{0}\left(1-p^{+}\right)^{t-1}\right)\right)&\\
+    &=S+\sum^{\infty}_{t=1}\left(\left(p_{0}p^{+}\left(R^{+}-S\right)\left(1-p^{+}\right)^{t-1}+\left(1-p_{0}\right)p^{-}\left(R^{-}-S\right)\right)\left(1-p^{-}\right)^{t-1}\right. &\\
+    &\left.\qquad\qquad\qquad-\left(p_{0}C_{1}\left(1-p^{+}\right)^{t-1}\right)-\left(\left(1-p_{0}\right)C_{1}\left(1-p^{-}\right)^{t-1}\right)\right)&\\
+    &=S+\sum^{\infty}_{t=1}\left(p_{0}\left(p^{+}\left(R^{+}-S\right)-C_{1}\right)\left(1-p^{+}\right)^{t-1}+\left(1-p_{0}\right)\left(p^{-}\left(R^{-}-S\right)-C_{1}\right)\left(1-p^{-}\right)^{t-1}\right)&\\
+    &=S+p_{0}\left(p^{+}\left(R^{+}-S\right)-C_{1}\right)\sum^{\infty}_{t=1}\left(1-p^{+}\right)^{t-1}+\left(1-p_{0}\right)\left(p^{-}\left(R^{-}-S\right)-C_{1}\right)\sum^{\infty}_{t=1}\left(1-p^{-}\right)^{t-1}&\\
+    &=S+p_{0}\left(p^{+}\left(R^{+}-S\right)-C_{1}\right)\cdot\dfrac{1}{1-\left(1-p^{+}\right)}+\left(1-p_{0}\right)\left(p^{-}\left(R^{-}-S\right)-C_{1}\right)\cdot\dfrac{1}{1-\left(1-p^{-}\right)}&\\
+    &=S+p_{0}\left(p^{+}\left(R^{+}-S\right)-C_{1}\right)\cdot\dfrac{1}{p^{+}}+\left(1-p_{0}\right)\left(p^{-}\left(R^{-}-S\right)-C_{1}\right)\dfrac{1}{p^{-}}&\\
+    &=S+p_{0}\left(\left(R^{+}-S\right)-\dfrac{C_{1}}{p^{+}}\right)+\left(1-p_{0}\right)\left(\left(R^{-}-S\right)-\dfrac{C_{1}}{p^{-}}\right)&\\
+    &=S+p_{0}\left(R^{+}-S-\dfrac{C_{1}}{p^{+}}\right)+\left(1-p_{0}\right)\left(R^{-}-S-\dfrac{C_{1}}{p^{-}}\right)&\\
+    &=S+p_{0}\left(R^{+}-\dfrac{C_{1}}{p^{+}}\right)-p_{0}S+\left(1-p_{0}\right)\left(R^{-}-\dfrac{C_{1}}{p^{-}}\right)-\left(1-p_{0}\right)S&\\
+    &=S+p_{0}\left(R^{+}-\dfrac{C_{1}}{p^{+}}\right)+\left(1-p_{0}\right)\left(R^{-}-\dfrac{C_{1}}{p^{-}}\right)-S&\\
+    &=p_{0}\left(R^{+}-\dfrac{C_{1}}{p^{+}}\right)+\left(1-p_{0}\right)\left(R^{-}-\dfrac{C_{1}}{p^{-}}\right)
+\end{flalign*}
+
+It's not optimal to quit the development of Win12 and get the safe return $S$.
+
+Let $V\left(\infty\right)\geqslant S$, then investors will be convinced that Microsoft will use the money they invest to develop Win12. 
+
+On the other hand, if $V\left(\infty\right)<S$, not only investors are not convinced, but also Microsoft will use Win11 next year to get the safe return of value $S$ instead of Win12, when Microsoft is risk-neutral.
+
+If $V\left(\infty\right)\geqslant S$, then moving backward to the small scale:
+\begin{flalign*}
+    \quad V\left(T\right)&=\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\left[\pi_{t-1}p\left(R+V\left(\infty\right)\right)-C_{0}\right]&\\
+    &\qquad\qquad+\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{T}\right)S&\\
+    &=\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}p\left(R+V\left(\infty\right)\right)&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)C_{0}&\\
+    &\qquad\qquad+\left(1-\pi_{0}+\pi_{0}\left(1-p\sum^{T}_{t=1}\left(1-p\right)^{t-1}\right)\right)S&\\
+    &=\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}p\left(R+V\left(\infty\right)\right)&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)C_{0}&\\
+    &\qquad\qquad+\left(1-\pi_{0}+\pi_{0}-p\pi_{0}\sum^{T}_{t=1}\left(1-p\right)^{t-1}\right)S&\\
+    &=\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}p\left(R+V\left(\infty\right)\right)&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)C_{0}&\\
+    &\qquad\qquad+\left(1-p\sum^{T}_{t=1}\pi_{0}\left(1-p\right)^{t-1}\right)S&\\
+    &=\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}p\left(R+V\left(\infty\right)\right)&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)C_{0}&\\
+    &\qquad\qquad+\left(1-p\sum^{T}_{t=1}\dfrac{\pi_{0}\left(1-p\right)^{t-1}}{1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\right)S&\\
+    &=\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}p\left(R+V\left(\infty\right)\right)&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)C_{0}&\\
+    &\qquad\qquad+\left(1-p\pi_{t-1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\right)S&\\
+    &=\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}p\left(R+V\left(\infty\right)\right)&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)C_{0}&\\
+    &\qquad\qquad+S-p\pi_{t-1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)S&\\
+    &=S+\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}p\left(R+V\left(\infty\right)\right)&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)C_{0}&\\
+    &\qquad\qquad-\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\pi_{t-1}pS&\\
+    &=S+\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\left(\pi_{t-1}p\left(R+V\left(\infty\right)\right)-C_{0}-\pi_{t-1}pS\right)&\\
+    &=S+\sum^{T}_{t=1}\left(1-\pi_{0}+\pi_{0}\left(1-p\right)^{t-1}\right)\left(\pi_{t-1}p\left(R+V\left(\infty\right)-S\right)-C_{0}\right)
+\end{flalign*}
+
+If $\pi_{0}p\left(R+V\left(\infty\right)-S\right)-C_{0}>0$, it's reasonable for Microsoft to start the Win12 project on a small scale.
+
+$\displaystyle\because \lim_{t\to\infty}\pi_{t}=0$
+
+$\displaystyle\therefore\lim_{t\to\infty}\pi_{t}p\left(R+V\left(\infty\right)-S\right)-C_{0}=-C_{0}<0$
+
+There exists a critical belief with the value $\bar{\pi}$ defined by $\bar{\pi}p\left(R+V\left(\infty\right)-S\right)-C_{0}=0$, such that $\pi_{t-1}p\left(R+V\left(\infty\right)-S\right)-C_{0}<0, \forall\pi_{t-1}>\bar{\pi}$ and $\pi_{t-1}p\left(R+V\left(\infty\right)-S\right)-C_{0}\geqslant0, \forall\pi_{t-1}\leqslant\bar{\pi}$. 
+
+Let $\bar{t}=\max\left\{t>0|\pi_{t-1}\geqslant\bar{\pi}\right\}$. Then Microsoft will continue to develop Win12 on a small scale before time $\bar{t}$, unless positive evidence about groups' performance is reported.
+
+\section*{2}
+
+Suppose that Microsoft tests its new laptop instead. To simplify the case, assume that Microsoft tests the quality of this laptop by running a specially designed series of programs, including repetition. There are 2 qualities: $\theta=1$ stands for good quality, while $\theta=0$ stands for bad. If $\theta=0$, the laptop won't get an accurate result by running the program. It's reasonable since the type of this laptop is of bad quality. If $\theta=1$, however, the laptop is good. It will generate a good result eventually (maybe longer than $T$), and Microsoft will gain revenue $R>0$ by selling the good quality laptop in the future.
+
+A modification is that the time of arrival of a good result $\tau $ is an exponential distributed random variable. Let $\lambda$ be the parameter of the exponential distribution. 
+
+The probability of the event that good result arrives after time $t$ is: $P_{1}\left(\tau>t\right)=1-P_{1}\left(\tau\leqslant t\right)=1-\left(1-e^{-\lambda t}\right)=e^{-\lambda t}$ since $t\geqslant0$. The subscript means that it is of type 1, $P\left(\theta=1\right)=1$. 
+
+Let the prior belief assign probability $\pi_{0}$ to the event $\theta=1$. 
+
+Then the probability of no good result happens before $t$ is:
+
+$\quad P_{\pi_{0}}\left(\tau>t\right)=1-\pi_{0}+\pi_{0}\cdot e^{-\lambda t}$ for type 1 \& 0.
+
+We have:
+
+$\quad P_{\pi_{0}}\left(\tau>0\right)=1-\pi_{0}+\pi_{0}\cdot e^{0}=1-\pi_{0}+\pi_{0}\cdot1=1$.
+
+$\quad \displaystyle \lim_{t\to\infty}P_{\pi_{0}}\left(\tau>t\right)=\lim_{t\to\infty}\left(1-\pi_{0}+\pi_{0}\cdot e^{-\lambda t}\right)=1-\pi_{0}+\pi_{0}\cdot\lim_{t\to\infty}e^{-\lambda t}=1-\pi_{0}+\pi_{0}\cdot0=1-\pi_{0}$
+
+The probability of no good result happens before $t$ is:
+
+$\quad P_{\pi_{0}}\left(\tau\leqslant t\right)=\pi_{0}\cdot \left(1-e^{-\lambda t}\right)$ for type 1 \& 0.
+
+If no satisfying result arrives before time $t$, Microsoft assigns a probability $\pi_{t}$ to $\theta=1$.
+
+In this case:
+
+$\quad \pi_{t}=P\left(\theta=1|\text{no good result before } t\right)=\dfrac{P\left(\theta=1\text{ and no good result before } t\right)}{P_{\pi_{0}}\left(\tau>t\right)}=\dfrac{\pi_{0}e^{-\lambda t}}{1-\pi_{0}+\pi_{0}e^{-\lambda t}}$
+
+However, since the exponential distribution is a continuous distribution, we cannot calculate something like $\pi_{t-1}pR$ as in the geometric distribution case.
+
+Instead, suppose Microsoft will make an irreversible decision to get the safe payoff $S$, and cancel the new laptop project, if the new laptop won't get any satisfying results before time $T$. It is because the revenue after time $T$ will go down significantly, and Microsoft cannot cover its cost. (You can take the revenue as a piecewise function). Let $C$ be the only cost of this risky research. If the good result is reported, assume Microsoft will get the value $R-C$.
+
+The value of experiment would be:
+\begin{flalign*}
+    \quad \displaystyle V\left(T\right) &= P_{\pi_{0}}\left(\tau\leqslant T\right)\left(R-C\right)+P_{\pi_{0}}\left(\tau>T\right)S&\\
+    &=\pi_{0}\left(1-e^{-\lambda T}\right)\left(R-C\right)+\left(1-\pi_{0}+\pi_{0}\cdot e^{-\lambda T}\right)S&\\
+    &=\pi_{0}\left(1-e^{-\lambda T}\right)\left(R-C\right)+S+\left(\pi_{0}\left(-1+e^{-\lambda T}\right)\right)S&\\
+    &=S+\pi_{0}\left(1-e^{-\lambda T}\right)\left(R-C\right)-\pi_{0}\left(1-e^{-\lambda T}\right)S&\\
+    &=S+\pi_{0}\left(1-e^{-\lambda T}\right)\left(R-S-C\right)
+\end{flalign*}
+
+As long as $R>S+C$, Microsoft will follow this strategy: keep the experiment running to see if a good result is reported before time $T$, and will stop the experiment if there is no good result before $T$.
+
+\end{document}
